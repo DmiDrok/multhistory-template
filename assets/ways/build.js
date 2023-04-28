@@ -42,7 +42,11 @@ const build = {
   // === Перенос всех файлов с папки src в папку dist ===
   moveHtml: function() {
     return src(paths.files.dev.html)
-      .pipe(plugins.plumber( utils.errorHandler('MOVE HTML') ))
+      .pipe(plugins.plumber( utils.errorHandler('MOVE HTML')))
+      .pipe(plugins.htmlBeautify({
+        indent_size: 2,
+        indent_level: 0,
+      }))
       .pipe(dest(paths.folders.build.html))
   },
 

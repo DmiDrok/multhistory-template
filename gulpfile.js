@@ -34,9 +34,10 @@ const moveFiles = series(buildWay.deleteBuildFolder, (process.argv.includes('--m
 module.exports.moveFiles = moveFiles;
 
 // === Режим разработки ===
-const startDev = parallel(general.startWatch, devWay.initBrowser);
+const startDev = parallel(preprosAll, general.startWatch, devWay.initBrowser);
 module.exports.dev = startDev;
 
 // === Режим для продакшна ===
-const startBuild = series(preprosAll, fullImages, buildJs, moveFiles);
+// const startBuild = series(preprosAll, fullImages, buildJs, moveFiles);
+const startBuild = series(preprosAll, devWay.imagesToMin, buildJs, moveFiles);
 module.exports.build = startBuild;

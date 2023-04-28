@@ -11,6 +11,7 @@ const appendPrepend = require('gulp-append-prepend');
 const del = require('del');
 const autoprefixer = require('gulp-autoprefixer');
 const cssnano = require('gulp-cssnano');
+const htmlBeautify = require('gulp-html-beautify');
 
 
 const browserSync = require('browser-sync').create();
@@ -30,4 +31,5 @@ module.exports = {
   browserSync,
   autoprefixer,
   cssnano,
+  htmlBeautify,
 };
