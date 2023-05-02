@@ -1,12 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <title>Мультистория | Мастерская мультфильмов</title><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script defer src="./js/libs/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="./css/style.min.css">
     <script defer src="./js/main.js"></script>
   </head>
-  <body></body>
+  <body>
+    <header class="header" id="header">
+      <div class="container header__container">
+        <div class="header__row">
+          <div class="logo header__logo"><a class="logo__link" href="./index.html">
+              <picture>
+                <source srcset="./images/logo-desktop.svg" media="(min-width: 1000px)"><img src="./images/logo.svg" alt="Логотип">
+              </picture></a></div>
+          <div class="contacts header__contacts">
+            <ul class="contacts__list">
+              <li class="contacts-item contacts__item"><img class="contacts-item__icon" src="./images/map-pin-light.svg" alt="" aria-hidden="true">
+                <div class="contacts-item__info"><span class="contacts-item__title">г. Самара</span><span class="contacts-item__value">ул. Печерская, 20А</span></div>
+              </li>
+              <li class="contacts-item contacts__item"><img class="contacts-item__icon" src="./images/phone-icon-light.svg" alt="" aria-hidden="true">
+                <div class="contacts-item__info"><a class="contacts-item__title" href="tel:89951310490">8 (995) 131-04-90</a><span class="contacts-item__value">Позвоните нам</span></div>
+              </li>
+            </ul>
+          </div>
+          <button class="action-btn header__get-action" type="button">Заказать звонок</button>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="welcome" id="welcome">
+        <div class="container welcome__container">
+          <div class="welcome__row">
+            <div class="welcome__text-block">
+              <h1 class="welcome__title"><span class="welcome__title_top">Увлекательные <br> мастер-классы для детей</span><span class="welcome__title_bottom">Мультфильмы своими руками</span><em class="welcome__title_note">Каждую неделю!</em></h1>
+              <button class="welcome__action" type="button">Узнайте расписание</button>
+            </div>
+            <div class="welcome-slider">
+              <div class="welcome-slider__main swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide welcome-slider__slide">
+                    <picture>
+                      <source srcset="./images/slide-photo-1-large.jpg" type="image/jpeg" media="(min-width: 695px)"><img class="welcome-slider__slide-content" src="./images/slide-photo-1.jpg" alt="Фотография детей на мастер-классе">
+                    </picture>
+                  </div>
+                  <div class="swiper-slide welcome-slider__slide">
+                    <picture>
+                      <source srcset="./images/slide-photo-2-large.jpg" type="image/jpeg" media="(min-width: 695px)"><img class="welcome-slider__slide-content" src="./images/slide-photo-2.jpg" alt="Фотография детей на мастер-классе">
+                    </picture>
+                  </div>
+                  <div class="swiper-slide welcome-slider__slide">
+                    <picture>
+                      <source srcset="./images/slide-photo-3-large.jpg" type="image/jpeg" media="(min-width: 695px)"><img class="welcome-slider__slide-content" src="./images/slide-photo-3.jpg" alt="Фотография детей на мастер-классе">
+                    </picture>
+                  </div>
+                  <div class="swiper-slide welcome-slider__slide">
+                    <picture>
+                      <source srcset="./images/slide-photo-4-large.jpg" type="image/jpeg" media="(min-width: 695px)"><img class="welcome-slider__slide-content" src="./images/slide-photo-4.jpg" alt="Фотография детей на мастер-классе">
+                    </picture>
+                  </div>
+                </div>
+              </div>
+              <div class="welcome-slider__pagination swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="what" id="what">
+        <div class="container what__container">
+          <div class="what__row">
+            <h2 class="what__title">Что такое мастер-класс по мультипликации?</h2>
+            <div class="what__wrapper">
+              <div class="what__text-block"><span class="what__subtitle">Это незабываемое событие для каждого ребенка </span>
+                <p class="what__text">На мастер-классе дети узнают о мультипликации, фантазируют, создают настоящий мультфильм, играют и веселятся!</p><img class="what__image what__image_large" src="./images/lumi-large.png" alt="Снимать мультики - это весело!">
+              </div>
+              <div class="what__grid">
+                <ul class="what-list">
+                  <li class="what-item"><img class="what-item__icon" src="./images/what-icon-1.svg" alt="" aria-hidden="true">
+                    <div class="what-item__info"><span class="what-item__title">от 1,5 часов</span><span class="what-item__value">Длительность мастер-класса</span></div>
+                  </li>
+                  <li class="what-item"><img class="what-item__icon" src="./images/what-icon-2.svg" alt="" aria-hidden="true">
+                    <div class="what-item__info"><span class="what-item__title">5-14 лет </span><span class="what-item__value">Программы для разных возрастов</span></div>
+                  </li>
+                  <li class="what-item"><img class="what-item__icon" src="./images/what-icon-3.svg" alt="" aria-hidden="true">
+                    <div class="what-item__info"><span class="what-item__title">Мультфильм своими руками</span><span class="what-item__value">Удивите родных и друзей</span></div>
+                  </li>
+                  <li class="what-item"><img class="what-item__icon" src="./images/what-icon-4.svg" alt="" aria-hidden="true">
+                    <div class="what-item__info"><span class="what-item__title">от 300 руб.</span><span class="what-item__value">Стоимость участия</span></div>
+                  </li>
+                </ul><img class="what__image what__image_small" src="./images/lumi-small.png" alt="Снимать мультики - это весело!">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

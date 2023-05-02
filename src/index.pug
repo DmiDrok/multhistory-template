@@ -1,12 +1,126 @@
 doctype html
-html(lang="en")
+html(lang="ru")
   head
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Document
+    title Мультистория | Мастерская мультфильмов
 
-    link(rel="stylesheet" href="./css/style.css")
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    //- Swiper
+    script(defer src="./js/libs/swiper-bundle.min.js")
+
+    link(rel="stylesheet" href="./css/style.min.css")
     script(defer src="./js/main.js")
   body
-    
+    header.header#header
+      .container.header__container
+        .header__row
+          .logo.header__logo
+            a.logo__link(href="./index.html")
+              picture
+                source(srcset="./images/logo-desktop.svg" media="(min-width: 1000px)")
+                img(src="./images/logo.svg" alt="Логотип")
+
+          .contacts.header__contacts
+            ul.contacts__list
+              li.contacts-item.contacts__item
+                img.contacts-item__icon(src="./images/map-pin-light.svg" alt="" aria-hidden="true")
+                .contacts-item__info
+                  span.contacts-item__title г. Самара
+                  span.contacts-item__value ул. Печерская, 20А
+
+              li.contacts-item.contacts__item
+                img.contacts-item__icon(src="./images/phone-icon-light.svg" alt="" aria-hidden="true")
+                .contacts-item__info
+                  a.contacts-item__title(href="tel:89951310490") 8 (995) 131-04-90
+                  span.contacts-item__value Позвоните нам
+
+          button.action-btn.header__get-action(type="button")
+            | Заказать звонок
+
+
+    main.main
+      section.welcome#welcome
+        .container.welcome__container
+          .welcome__row
+            .welcome__text-block
+              h1.welcome__title
+                span.welcome__title_top Увлекательные #[br] мастер-классы для детей
+                span.welcome__title_bottom Мультфильмы своими руками
+                em.welcome__title_note Каждую неделю!
+
+              button.welcome__action(type="button")
+                | Узнайте расписание
+            
+            .welcome-slider
+              .welcome-slider__main.swiper
+                .swiper-wrapper
+                  .swiper-slide.welcome-slider__slide
+                    picture
+                      source(srcset="./images/slide-photo-1-large.jpg" type="image/jpeg" media="(min-width: 695px)")
+                      img.welcome-slider__slide-content(src="./images/slide-photo-1.jpg" alt="Фотография детей на мастер-классе")
+                  .swiper-slide.welcome-slider__slide
+                    picture
+                      source(srcset="./images/slide-photo-2-large.jpg" type="image/jpeg" media="(min-width: 695px)")
+                      img.welcome-slider__slide-content(src="./images/slide-photo-2.jpg" alt="Фотография детей на мастер-классе")
+                  .swiper-slide.welcome-slider__slide
+                    picture
+                      source(srcset="./images/slide-photo-3-large.jpg" type="image/jpeg" media="(min-width: 695px)")
+                      img.welcome-slider__slide-content(src="./images/slide-photo-3.jpg" alt="Фотография детей на мастер-классе")
+                  .swiper-slide.welcome-slider__slide
+                    picture
+                      source(srcset="./images/slide-photo-4-large.jpg" type="image/jpeg" media="(min-width: 695px)")
+                      img.welcome-slider__slide-content(src="./images/slide-photo-4.jpg" alt="Фотография детей на мастер-классе")
+
+              .welcome-slider__pagination.swiper-pagination
+
+      section.what#what
+        .container.what__container
+          .what__row
+            h2.what__title Что такое мастер-класс по мультипликации?
+
+            .what__wrapper
+              .what__text-block
+                span.what__subtitle Это незабываемое событие для каждого ребенка 
+                p.what__text На мастер-классе дети узнают о мультипликации, фантазируют, создают настоящий мультфильм, играют и веселятся!
+                img.what__image.what__image_large(src="./images/lumi-large.png" alt="Снимать мультики - это весело!")
+              
+
+              .what__grid
+                ul.what-list
+                  li.what-item
+                    img.what-item__icon(src="./images/what-icon-1.svg" alt="" aria-hidden="true")
+                    .what-item__info
+                      span.what-item__title от 1,5 часов
+                      span.what-item__value Длительность мастер-класса
+                  li.what-item
+                    img.what-item__icon(src="./images/what-icon-2.svg" alt="" aria-hidden="true")
+                    .what-item__info
+                      span.what-item__title 5-14 лет 
+                      span.what-item__value Программы для разных возрастов
+                  li.what-item
+                    img.what-item__icon(src="./images/what-icon-3.svg" alt="" aria-hidden="true")
+                    .what-item__info
+                      span.what-item__title Мультфильм своими руками
+                      span.what-item__value Удивите родных и друзей
+                  li.what-item
+                    img.what-item__icon(src="./images/what-icon-4.svg" alt="" aria-hidden="true")
+                    .what-item__info
+                      span.what-item__title от 300 руб.
+                      span.what-item__value Стоимость участия
+
+                img.what__image.what__image_small(src="./images/lumi-small.png" alt="Снимать мультики - это весело!")
+
+
+
+
+
+
+
+
+
+
