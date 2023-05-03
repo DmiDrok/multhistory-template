@@ -13,6 +13,12 @@ html(lang="ru")
     //- Swiper
     script(defer src="./js/libs/swiper-bundle.min.js")
 
+    //- Fancybox
+    script(defer src="./js/libs/fancybox.js")
+
+    //- Lazyload
+    script(defer src="./js/libs/lazyload.min.js")
+
     link(rel="stylesheet" href="./css/style.min.css")
     script(defer src="./js/main.js")
   body
@@ -53,7 +59,7 @@ html(lang="ru")
                 span.welcome__title_bottom Мультфильмы своими руками
                 em.welcome__title_note Каждую неделю!
 
-              button.welcome__action(type="button")
+              button.red-action-btn.welcome__action(type="button")
                 | Узнайте расписание
             
             .welcome-slider
@@ -76,11 +82,16 @@ html(lang="ru")
                       source(srcset="./images/slide-photo-4-large.jpg" type="image/jpeg" media="(min-width: 695px)")
                       img.welcome-slider__slide-content(src="./images/slide-photo-4.jpg" alt="Фотография детей на мастер-классе")
 
-              .welcome-slider__pagination.swiper-pagination
+              .pagination.welcome-slider__pagination.swiper-pagination
 
       section.what#what
         .container.what__container
           .what__row
+            .anim-decor
+              img.anim-decor__image.anim-decor__image_default(src="./images/anim-1-default.png" alt="" aria-hidden="true")
+              img.anim-decor__image.anim-decor__image_active(src="./images/anim-1-active.png" alt="" aria-hidden="true")
+
+
             h2.what__title Что такое мастер-класс по мультипликации?
 
             .what__wrapper
@@ -115,6 +126,174 @@ html(lang="ru")
 
                 img.what__image.what__image_small(src="./images/lumi-small.png" alt="Снимать мультики - это весело!")
 
+      section.actions#actions
+        .container.actions__container
+          .actions__row
+            h2.actions__title Что дети делают на мастер-классе?
+
+            .actions__grid
+              ul.actions-list
+                li.action
+                  span.action__about придумывают сюжет
+
+                  .action__slider-container
+                    .action__slider.swiper
+                      .swiper-wrapper
+                        .swiper-slide
+                          img.lazy(data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/thinking-1.jpg" alt="Дети придумывают сюжет")
+                        .swiper-slide
+                          img.lazy(data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/thinking-2.jpg" alt="Дети придумывают сюжет")
+                        .swiper-slide
+                          img.lazy(data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/thinking-3.jpg" alt="Дети придумывают сюжет")
+                li.action
+                  span.action__about создают персонажей
+
+                  .action__slider-container
+                    .action__slider.swiper
+                      .swiper-wrapper
+                        .swiper-slide
+                          img.lazy(data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/making-1.jpg" alt="Дети создают персонажей")
+                        .swiper-slide
+                          img.lazy(data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/making-2.jpg" alt="Дети создают персонажей")
+                        .swiper-slide
+                          img.lazy(data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/making-3.jpg" alt="Дети создают персонажей")
+                        .swiper-slide
+                          img.lazy(data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/making-4.jpg" alt="Дети создают персонажей")
+                        .swiper-slide
+                          img.lazy(data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/making-5.jpg" alt="Дети создают персонажей")
+                        .swiper-slide
+                          img.lazy(data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/making-6.jpg" alt="Дети создают персонажей")
+
+                li.action
+                  span.action__about снимают мультфильм
+
+                  .action__slider-container
+                    .action__slider.swiper
+                      .swiper-wrapper
+                        .swiper-slide
+                          img.lazy(data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/record-1.jpg" alt="Дети снимают мультфильм")
+                        .swiper-slide
+                          img.lazy(data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/record-2.jpg" alt="Дети снимают мультфильм")
+
+                li.action
+                  span.action__about озвучивают героев
+
+                  .action__slider-container
+                    .action__slider.swiper
+                      .swiper-wrapper
+                        .swiper-slide
+                          img.lazy(data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/speak-1.jpg" alt="Дети озвучивают героев")
+                        .swiper-slide
+                          img.lazy(data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/speak-2.jpg" alt="Дети озвучивают героев")
+
+                li.action
+                  span.action__about вместе смотрят что получилось!
+
+                  .action__slider-container
+                    .action__slider.swiper
+                      .swiper-wrapper
+                        .swiper-slide
+                          img.lazy(data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/see-1.jpg" alt="Дети вместе смотрят что получилось!")
+                        .swiper-slide
+                          img.lazy(data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/see-2.jpg" alt="Дети вместе смотрят что получилось!")
+
+      section.points#points
+        .container.points__container
+          .points__row
+            h2.points__title Почему стоит побывать на мастер-классе по мультипликации?
+
+            .points__content
+              ul.points-list
+                li.point
+                  .point__content
+                    span.point__title Это незабываемое событие для ребенка
+                    p.point__about Дети обожают мультики, а создать настоящий мультфильм своими руками - это просто восторг! 
+                li.point
+                  .point__content
+                    span.point__title Это эксклюзивный и уникальный вид досуга на рынке детских услуг
+                    p.point__about Где ещё, как не в Мультистории, можно прийти и создать настоящий мультфильм своими руками?
+                li.point
+                  .point__content
+                    span.point__title Дети пробуют новые виды творчества
+                    p.point__about Придумывание сюжета, изготовление декораций и персонажей, работа с техникой, съемка на мульт-станке и озвучка может открыть таланты вашего ребенка, о которых Вы даже подозревали.
+                li.point
+                  .point__content
+                    span.point__title Мастер-классы ещё и очень полезны для детей
+                    p.point__about На мастер-классе дети делают мультфильмы не в компьютере, а в реальной жизни. Формируются социальные навыки развивается воображение, а также навыки коммуникации и совместного творчества с другими детьми.
+                li.point
+                  .point__content
+                    span.point__title Интересные и познавательные факты о мультипликации
+                    p.point__about Что такое мультипликация? Когда и как был снят первый мультфильм? Какие техники мультипликации существуют? И мнногое-многое другое.
+                
+      section.heroes#heroes
+        .container.heroes__container
+          .heroes__row
+            .anim-decor
+              img.anim-decor__image.anim-decor__image_default(src="./images/anim-2-default.png" alt="" aria-hidden="true")
+              img.anim-decor__image.anim-decor__image_active(src="./images/anim-2-active.png" alt="" aria-hidden="true")
+
+            h2.heroes__title Ваш ребенок встретится с любимыми героями
+            p.heroes__subtitle Динозавры, Пираты, LEGO, Гарри Поттер, Монстры на каникулах, Черепашки ниндзя, Мимимишки, Роботы, Миньоны, Космос, Щенячий патруль, Ледибаг, Супер-кот, Майнкрафт и многие-многие другие!
+
+            .heroes__content
+              //- Mobile
+              .heroes-slider.swiper
+                .heroes-slider__wrapper.swiper-wrapper
+                  .heroes-slider__slide.swiper-slide
+                    img.heroes-slider__image(src="./images/heroes-slider-photo-1.jpg", alt="Любимые герои детей")
+                    img.heroes-slider__image(src="./images/heroes-slider-photo-2.jpg", alt="Любимые герои детей")
+                    img.heroes-slider__image(src="./images/heroes-slider-photo-3.jpg", alt="Любимые герои детей")
+                    img.heroes-slider__image(src="./images/heroes-slider-photo-4.jpg", alt="Любимые герои детей")
+                  .heroes-slider__slide.swiper-slide
+                    img.heroes-slider__image(src="./images/heroes-slider-photo-5.jpg", alt="Любимые герои детей")
+                    img.heroes-slider__image(src="./images/heroes-slider-photo-6.jpg", alt="Любимые герои детей")
+                    img.heroes-slider__image(src="./images/heroes-slider-photo-7.jpg", alt="Любимые герои детей")
+                    img.heroes-slider__image(src="./images/heroes-slider-photo-8.jpg", alt="Любимые герои детей")
+      
+              .pagination.heroes-slider__pagination
+
+              //- Desktop
+              .heroes-line
+                .heroes-line__col
+                  img.lazy(src="" data-src="./images/heroes-slider-photo-1.jpg" alt="Любимые герои детей")
+                .heroes-line__col
+                  img.lazy(src="" data-src="./images/heroes-slider-photo-2.jpg" alt="Любимые герои детей")
+                .heroes-line__col
+                  img.lazy(src="" data-src="./images/heroes-slider-photo-3.jpg" alt="Любимые герои детей")
+                .heroes-line__col
+                  img.lazy(src="" data-src="./images/heroes-slider-photo-4.jpg" alt="Любимые герои детей")
+                .heroes-line__col
+                  img.lazy(src="" data-src="./images/heroes-slider-photo-5.jpg" alt="Любимые герои детей")
+                .heroes-line__col
+                  img.lazy(src="" data-src="./images/heroes-slider-photo-6.jpg" alt="Любимые герои детей")
+                .heroes-line__col
+                  img.lazy(src="" data-src="./images/heroes-slider-photo-7.jpg" alt="Любимые герои детей")
+                .heroes-line__col
+                  img.lazy(src="" data-src="./images/heroes-slider-photo-8.jpg" alt="Любимые герои детей")
+                .heroes-line__col
+                  img.lazy(src="" data-src="./images/heroes-slider-photo-1.jpg" alt="Любимые герои детей")
+                .heroes-line__col
+                  img.lazy(src="" data-src="./images/heroes-slider-photo-2.jpg" alt="Любимые герои детей")
+                .heroes-line__col
+                  .heroes-line__description-block.heroes__description-block
+                    p.heroes__descr-text Запишитесь на мастер-класс с любимыми героями вашего ребенка
+                    button.red-action-btn.heroes__action(type="button") Записаться заранее
+
+            .heroes__description-block
+              p.heroes__descr-text Запишитесь на мастер-класс с любимыми героями вашего ребенка
+              button.red-action-btn.heroes__action(type="button") Записаться заранее
+
+      section.videos#videos
+        .container.videos__container
+          .videos__row
+            h2.videos__title Посмотрите мультфильмы с мастер-классов
+            
+            .videos__content
+              include includes/video
+              include includes/video
+              include includes/video
+              include includes/video
+              include includes/video
 
 
 

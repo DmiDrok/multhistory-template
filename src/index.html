@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script defer src="./js/libs/swiper-bundle.min.js"></script>
+    <script defer src="./js/libs/fancybox.js"></script>
+    <script defer src="./js/libs/lazyload.min.js"></script>
     <link rel="stylesheet" href="./css/style.min.css">
     <script defer src="./js/main.js"></script>
   </head>
@@ -39,7 +41,7 @@
           <div class="welcome__row">
             <div class="welcome__text-block">
               <h1 class="welcome__title"><span class="welcome__title_top">Увлекательные <br> мастер-классы для детей</span><span class="welcome__title_bottom">Мультфильмы своими руками</span><em class="welcome__title_note">Каждую неделю!</em></h1>
-              <button class="welcome__action" type="button">Узнайте расписание</button>
+              <button class="red-action-btn welcome__action" type="button">Узнайте расписание</button>
             </div>
             <div class="welcome-slider">
               <div class="welcome-slider__main swiper">
@@ -66,7 +68,7 @@
                   </div>
                 </div>
               </div>
-              <div class="welcome-slider__pagination swiper-pagination"></div>
+              <div class="pagination welcome-slider__pagination swiper-pagination"></div>
             </div>
           </div>
         </div>
@@ -74,6 +76,7 @@
       <section class="what" id="what">
         <div class="container what__container">
           <div class="what__row">
+            <div class="anim-decor"><img class="anim-decor__image anim-decor__image_default" src="./images/anim-1-default.png" alt="" aria-hidden="true"><img class="anim-decor__image anim-decor__image_active" src="./images/anim-1-active.png" alt="" aria-hidden="true"></div>
             <h2 class="what__title">Что такое мастер-класс по мультипликации?</h2>
             <div class="what__wrapper">
               <div class="what__text-block"><span class="what__subtitle">Это незабываемое событие для каждого ребенка </span>
@@ -96,6 +99,156 @@
                 </ul><img class="what__image what__image_small" src="./images/lumi-small.png" alt="Снимать мультики - это весело!">
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      <section class="actions" id="actions">
+        <div class="container actions__container">
+          <div class="actions__row">
+            <h2 class="actions__title">Что дети делают на мастер-классе?</h2>
+            <div class="actions__grid">
+              <ul class="actions-list">
+                <li class="action"><span class="action__about">придумывают сюжет</span>
+                  <div class="action__slider-container">
+                    <div class="action__slider swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img class="lazy" data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/thinking-1.jpg" alt="Дети придумывают сюжет"></div>
+                        <div class="swiper-slide"><img class="lazy" data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/thinking-2.jpg" alt="Дети придумывают сюжет"></div>
+                        <div class="swiper-slide"><img class="lazy" data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/thinking-3.jpg" alt="Дети придумывают сюжет"></div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="action"><span class="action__about">создают персонажей</span>
+                  <div class="action__slider-container">
+                    <div class="action__slider swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img class="lazy" data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/making-1.jpg" alt="Дети создают персонажей"></div>
+                        <div class="swiper-slide"><img class="lazy" data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/making-2.jpg" alt="Дети создают персонажей"></div>
+                        <div class="swiper-slide"><img class="lazy" data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/making-3.jpg" alt="Дети создают персонажей"></div>
+                        <div class="swiper-slide"><img class="lazy" data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/making-4.jpg" alt="Дети создают персонажей"></div>
+                        <div class="swiper-slide"><img class="lazy" data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/making-5.jpg" alt="Дети создают персонажей"></div>
+                        <div class="swiper-slide"><img class="lazy" data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/making-6.jpg" alt="Дети создают персонажей"></div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="action"><span class="action__about">снимают мультфильм</span>
+                  <div class="action__slider-container">
+                    <div class="action__slider swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img class="lazy" data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/record-1.jpg" alt="Дети снимают мультфильм"></div>
+                        <div class="swiper-slide"><img class="lazy" data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/record-2.jpg" alt="Дети снимают мультфильм"></div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="action"><span class="action__about">озвучивают героев</span>
+                  <div class="action__slider-container">
+                    <div class="action__slider swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img class="lazy" data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/speak-1.jpg" alt="Дети озвучивают героев"></div>
+                        <div class="swiper-slide"><img class="lazy" data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/speak-2.jpg" alt="Дети озвучивают героев"></div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="action"><span class="action__about">вместе смотрят что получилось!</span>
+                  <div class="action__slider-container">
+                    <div class="action__slider swiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img class="lazy" data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/see-1.jpg" alt="Дети вместе смотрят что получилось!"></div>
+                        <div class="swiper-slide"><img class="lazy" data-swiper-parallax-duration="400" data-swiper-parallax-opacity="0.5" data-swiper-parallax-scale="0.5" src="" data-src="./images/see-2.jpg" alt="Дети вместе смотрят что получилось!"></div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="points" id="points">
+        <div class="container points__container">
+          <div class="points__row">
+            <h2 class="points__title">Почему стоит побывать на мастер-классе по мультипликации?</h2>
+            <div class="points__content">
+              <ul class="points-list">
+                <li class="point">
+                  <div class="point__content"><span class="point__title">Это незабываемое событие для ребенка</span>
+                    <p class="point__about">Дети обожают мультики, а создать настоящий мультфильм своими руками - это просто восторг! </p>
+                  </div>
+                </li>
+                <li class="point">
+                  <div class="point__content"><span class="point__title">Это эксклюзивный и уникальный вид досуга на рынке детских услуг</span>
+                    <p class="point__about">Где ещё, как не в Мультистории, можно прийти и создать настоящий мультфильм своими руками?</p>
+                  </div>
+                </li>
+                <li class="point">
+                  <div class="point__content"><span class="point__title">Дети пробуют новые виды творчества</span>
+                    <p class="point__about">Придумывание сюжета, изготовление декораций и персонажей, работа с техникой, съемка на мульт-станке и озвучка может открыть таланты вашего ребенка, о которых Вы даже подозревали.</p>
+                  </div>
+                </li>
+                <li class="point">
+                  <div class="point__content"><span class="point__title">Мастер-классы ещё и очень полезны для детей</span>
+                    <p class="point__about">На мастер-классе дети делают мультфильмы не в компьютере, а в реальной жизни. Формируются социальные навыки развивается воображение, а также навыки коммуникации и совместного творчества с другими детьми.</p>
+                  </div>
+                </li>
+                <li class="point">
+                  <div class="point__content"><span class="point__title">Интересные и познавательные факты о мультипликации</span>
+                    <p class="point__about">Что такое мультипликация? Когда и как был снят первый мультфильм? Какие техники мультипликации существуют? И мнногое-многое другое.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="heroes" id="heroes">
+        <div class="container heroes__container">
+          <div class="heroes__row">
+            <div class="anim-decor"><img class="anim-decor__image anim-decor__image_default" src="./images/anim-2-default.png" alt="" aria-hidden="true"><img class="anim-decor__image anim-decor__image_active" src="./images/anim-2-active.png" alt="" aria-hidden="true"></div>
+            <h2 class="heroes__title">Ваш ребенок встретится с любимыми героями</h2>
+            <p class="heroes__subtitle">Динозавры, Пираты, LEGO, Гарри Поттер, Монстры на каникулах, Черепашки ниндзя, Мимимишки, Роботы, Миньоны, Космос, Щенячий патруль, Ледибаг, Супер-кот, Майнкрафт и многие-многие другие!</p>
+            <div class="heroes__content">
+              <div class="heroes-slider swiper">
+                <div class="heroes-slider__wrapper swiper-wrapper">
+                  <div class="heroes-slider__slide swiper-slide"><img class="heroes-slider__image" src="./images/heroes-slider-photo-1.jpg" alt="Любимые герои детей"><img class="heroes-slider__image" src="./images/heroes-slider-photo-2.jpg" alt="Любимые герои детей"><img class="heroes-slider__image" src="./images/heroes-slider-photo-3.jpg" alt="Любимые герои детей"><img class="heroes-slider__image" src="./images/heroes-slider-photo-4.jpg" alt="Любимые герои детей"></div>
+                  <div class="heroes-slider__slide swiper-slide"><img class="heroes-slider__image" src="./images/heroes-slider-photo-5.jpg" alt="Любимые герои детей"><img class="heroes-slider__image" src="./images/heroes-slider-photo-6.jpg" alt="Любимые герои детей"><img class="heroes-slider__image" src="./images/heroes-slider-photo-7.jpg" alt="Любимые герои детей"><img class="heroes-slider__image" src="./images/heroes-slider-photo-8.jpg" alt="Любимые герои детей"></div>
+                </div>
+              </div>
+              <div class="pagination heroes-slider__pagination"></div>
+              <div class="heroes-line">
+                <div class="heroes-line__col"><img class="lazy" src="" data-src="./images/heroes-slider-photo-1.jpg" alt="Любимые герои детей"></div>
+                <div class="heroes-line__col"><img class="lazy" src="" data-src="./images/heroes-slider-photo-2.jpg" alt="Любимые герои детей"></div>
+                <div class="heroes-line__col"><img class="lazy" src="" data-src="./images/heroes-slider-photo-3.jpg" alt="Любимые герои детей"></div>
+                <div class="heroes-line__col"><img class="lazy" src="" data-src="./images/heroes-slider-photo-4.jpg" alt="Любимые герои детей"></div>
+                <div class="heroes-line__col"><img class="lazy" src="" data-src="./images/heroes-slider-photo-5.jpg" alt="Любимые герои детей"></div>
+                <div class="heroes-line__col"><img class="lazy" src="" data-src="./images/heroes-slider-photo-6.jpg" alt="Любимые герои детей"></div>
+                <div class="heroes-line__col"><img class="lazy" src="" data-src="./images/heroes-slider-photo-7.jpg" alt="Любимые герои детей"></div>
+                <div class="heroes-line__col"><img class="lazy" src="" data-src="./images/heroes-slider-photo-8.jpg" alt="Любимые герои детей"></div>
+                <div class="heroes-line__col"><img class="lazy" src="" data-src="./images/heroes-slider-photo-1.jpg" alt="Любимые герои детей"></div>
+                <div class="heroes-line__col"><img class="lazy" src="" data-src="./images/heroes-slider-photo-2.jpg" alt="Любимые герои детей"></div>
+                <div class="heroes-line__col">
+                  <div class="heroes-line__description-block heroes__description-block">
+                    <p class="heroes__descr-text">Запишитесь на мастер-класс с любимыми героями вашего ребенка</p>
+                    <button class="red-action-btn heroes__action" type="button">Записаться заранее</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="heroes__description-block">
+              <p class="heroes__descr-text">Запишитесь на мастер-класс с любимыми героями вашего ребенка</p>
+              <button class="red-action-btn heroes__action" type="button">Записаться заранее</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="videos" id="videos">
+        <div class="container videos__container">
+          <div class="videos__row">
+            <h2 class="videos__title">Посмотрите мультфильмы с мастер-классов</h2>
+            <div class="videos__content"><a class="video-iframe-link" href="https://www.youtube.com/embed/dQw4w9WgXcQ"><iframe width="280" height="140" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></a><a class="video-iframe-link" href="https://www.youtube.com/embed/dQw4w9WgXcQ"><iframe width="280" height="140" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></a><a class="video-iframe-link" href="https://www.youtube.com/embed/dQw4w9WgXcQ"><iframe width="280" height="140" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></a><a class="video-iframe-link" href="https://www.youtube.com/embed/dQw4w9WgXcQ"><iframe width="280" height="140" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></a><a class="video-iframe-link" href="https://www.youtube.com/embed/dQw4w9WgXcQ"><iframe width="280" height="140" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></a></div>
           </div>
         </div>
       </section>
