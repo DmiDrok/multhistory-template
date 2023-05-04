@@ -101,3 +101,9 @@
     display: block !important;
   }
 }
+
+// Скрытые элементы
+.visually-hidden {
+  position: fixed;
+  transform: scale(0);
+}

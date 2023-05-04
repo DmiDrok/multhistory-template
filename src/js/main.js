@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   try {
     setCorrectSliders();
     setCorrectLazyLoad();
+    setCorrectVideoPopups();
   } catch(err) {
     console.error(err);
   }
@@ -18,7 +19,7 @@ function setCorrectSliders() {
         delay: 3500,
       },
       pagination: {
-        el: '.swiper-pagination',
+        el: '.welcome-slider__pagination',
         type: 'bullets',
         clickable: true,
         bulletClass: 'pagination-bullet',
@@ -54,10 +55,28 @@ function setCorrectSliders() {
       }
     });
   };
+  const doReviewsSlider = () => {
+    const reviewsSlider = document.querySelector('.reviews-slider');
+    const reviewsSwiper = new Swiper(reviewsSlider, {
+      spaceBetween: 50,
+      slideActiveClass: 'reviews-slider__slide_active',
+      pagination: {
+        el: '.reviews-slider__pagination',
+        type: 'bullets',
+        clickable: true,
+        bulletClass: 'pagination-bullet',
+        bulletActiveClass: 'pagination-bullet_active',
+      }
+    });
+    if (window.matchMedia('(min-width: 720px)').matches) {
+      reviewsSwiper.destroy();
+    }
+  };
 
   doWelcomeSlider();
   doActionsSlider();
   doHeroesSlider();
+  doReviewsSlider();
 }
 
 // Ленивая загрузка
@@ -65,17 +84,24 @@ function setCorrectLazyLoad() {
   const lazy = new LazyLoad();
 }
 
-const links = document.querySelectorAll('.video-iframe-link');
+// Попапы с видео
+function setCorrectVideoPopups() {
+  const links = document.querySelectorAll('.video-iframe-link');
 
-links.forEach((link) => {
-  link.addEventListener('click', (event) => {
-    event.preventDefault();
-    
-    new Fancybox([
-      {
-        src: link.href,
-        type: "video",
-      },
-    ]);
+  links.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      
+      new Fancybox([
+        {
+          src: link.href,
+          type: "video",
+        },
+      ]);
+    });
   });
-});
+}
+
+// console.log = {};
+// console.error = {};
+// console.warn = {};

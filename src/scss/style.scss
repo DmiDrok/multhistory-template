@@ -7,6 +7,7 @@
 
 html {
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 *,
@@ -20,6 +21,7 @@ body {
   overflow-x: hidden;
   min-width: 100vw; // Убираем прыжки при overflow: hidden (когда открываем попапы)
   min-height: 100vh;
+  overflow: hidden;
 }
 
 img {
@@ -43,6 +45,19 @@ img {
       "logo"
       "contacts"
     ;
+  }
+
+  .top-note {
+    display: none;
+    background: #D9D9D9;
+    padding: 15px 0;
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+
+    strong {
+      font-weight: 600;
+    }
   }
 
   &__logo {
@@ -126,6 +141,12 @@ img {
       padding: 9px 60px;
     }
   }
+
+  @media (min-width: 920px) {
+    .top-note {
+      display: block;
+    }
+  }
 }
 
 .contacts {
@@ -158,15 +179,27 @@ img {
       font-weight: 400;
       text-decoration: none;
       color: inherit;
+    }
 
-      &::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;  
+    a {
+      transition: opacity ease .2s;
+
+      &:hover {
+        opacity: .5;
       }
+
+      &:active {
+        opacity: .1;
+      }
+    }
+
+    a::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
     }
 
     &__value {
@@ -372,16 +405,36 @@ img {
     padding: 26px 0;
   }
 
-  .anim-decor {
-    
-  }
-
   &__text-block {
     text-align: center;
     display: flex;
     flex-direction: column;
     position: relative;
     z-index: 5;
+  }
+
+  .decor-image {
+    display: none;
+    position: relative;
+
+    &__add-image-block {
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: translate(-10%, -30%);
+    }
+
+    &__text {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 25px;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      transform: translate(-15%, 0);
+      text-align: center;
+      width: 70%;
+    }
   }
 
   &__title {
@@ -501,6 +554,10 @@ img {
       text-align: start;
     }
 
+    .decor-image {
+      display: block;
+    }
+
     &__subtitle {
       font-weight: 600;
       font-size: 24px;
@@ -538,6 +595,14 @@ img {
 
       &_small {
         display: none;
+      }
+    }
+  }
+
+  @media (min-width: 980px) {
+    .decor-image {
+      &__add-image-block {
+        transform: translate(-30%, -30%);
       }
     }
   }
@@ -808,7 +873,7 @@ img {
   .anim-decor {
     top: 0;
     right: 0;
-    transform: translate(30%, -30%);
+    transform: translate(-10%, -30%);
   }
 
   &__title {
@@ -938,6 +1003,10 @@ img {
   }
 
   @media (min-width: 1100px) {
+    .anim-decor {
+      transform: translate(30%, -30%);
+    }
+
     &__title {
       font-size: 36px;
       line-height: 35px;
@@ -985,6 +1054,7 @@ img {
     margin-top: 20px;
     display: grid;
     justify-content: center;
+    align-items: center;
 
     .video-iframe-link {
       width: 280px;
@@ -1035,6 +1105,690 @@ img {
           grid-column: span 2;
           height: 100%;
           width: 100% !important;
+        }
+      }
+    }
+  }
+}
+
+// === Мероприятия ===
+.events {
+  margin-top: 38px;
+
+  &__title {
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    display: block;
+  }
+
+  &__line {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 260px;
+    justify-content: center;
+    grid-row-gap: 15px;
+  }
+
+  // Карточка мероприятия
+  .event {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);    
+
+    &__image {
+      max-width: 100%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &__content-block {
+      padding: 15px 35px 30px 35px;
+      text-align: center;
+    }
+
+    &__title {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 6px;
+    }
+
+    &__description {
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 18px;
+    }
+
+    &:nth-child(1n+3) {
+      display: none;
+    }
+  }
+
+  .motivation {
+    display: none;
+    margin-top: 60px;
+    justify-content: space-between;
+    align-items: center;
+
+    &__title {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 35px;
+    }
+
+    &__text {
+      margin-top: 7px;
+    }
+
+    &__action {
+      font-size: 24px;
+      line-height: 35px;
+      padding: 10px 50px;
+      position: relative;
+    }
+
+    &__action-wrapper {
+      position: relative;
+
+      .anim-decor {
+        transform: translate(-10%, -91%);
+        right: unset;
+        left: 0;
+      }
+    }
+  }
+
+  @media (min-width: 420px) {
+    &__line {
+      grid-template-columns: 310px;
+
+      .event {
+        display: flex !important;
+      }
+    }
+  }
+
+  @media (min-width: 575px) {
+    &__line {
+      grid-template-columns: repeat(2,  minmax(min-content, 280px));
+      grid-gap: 20px;
+
+      .event {
+        &__content-block {
+          text-align: start;
+        }
+
+        &:last-child {
+          // grid-column: span 2;
+          transform: translate(50%, 0);
+        }
+      }
+    }
+  }
+
+  @media (min-width: 920px) {
+    &__title {
+      // text-align: start;
+      font-size: 36px;
+      line-height: 60px;
+    }
+
+    &__line {
+      grid-template-columns: repeat(2, 330px);
+    }
+  }
+
+  @media (min-width: 1080px) {
+    background-image: linear-gradient(to bottom, #fff 60%, #E8E8E8 60%);
+
+    &__row {
+      padding-bottom: 60px;
+    }
+
+    &__title {
+      text-align: start;
+    }
+
+    &__line {
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: 55px;
+
+      .event {
+        &:last-child {
+          transform: none;
+        }
+      }
+    }
+
+    .motivation {
+      display: flex;
+    }
+  }
+}
+
+// === Отзывы ===
+.reviews {
+  margin-top: 35px;
+
+  .container {
+    position: relative;
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: -1;
+
+    &_main {
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+    }
+
+    // Летающий шар
+    &_fly-1 {
+      bottom: 0;
+      left: 100px;
+    }
+
+    // Два шарика
+    &_fly-2 {
+      right: 0;
+      top: 50%;
+      transform: translate(0, -40%);
+    }
+
+    &_fly-3 {
+      right: -60px;
+      top: 50%;
+      transform: translate(0, -60%);
+    }
+
+    // Два облачка
+    &_fly-4 {
+      left: 15%;
+      top: 30%;
+    }
+
+    &_fly-5 {
+      left: 7%;
+      top: 40%;
+    }
+  }
+
+  &__title {
+    display: block;
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  &__wrapper {
+    margin-top: 20px;
+  }
+
+  // Слайдер
+  &__slider-container {
+    position: relative;
+
+    .pagination {
+      bottom: -25px !important;
+      z-index: 10;
+
+      &-bullet_active {
+        background: #000;
+      }
+    }
+  }
+
+  &-slider {
+    overflow: visible;
+    max-width: 510px;
+    padding: 5px 20px;
+
+    &__wrapper {
+      align-items: center;
+    }
+
+    .review {  
+      font-weight: 500;
+      font-size: 9px;
+      line-height: 18px;
+      height: auto;
+      display: flex;
+      align-items: center;
+      border: 1px solid #000;
+      box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.25);
+      transition: background ease .4s, color ease .4s;
+      background: #fff;
+      
+      &__wrapper {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      &__author {
+        align-self: flex-end;
+        margin-top: 10px;
+      }
+
+      &:hover {
+        background: #010101;
+        color: #fff;
+      }
+    }
+
+    &__slide_active {
+      background: #010101 !important;
+      color: #fff;
+    }
+  }
+
+  @media (min-width: 760px) {
+    // background: url(../images/attractions-bg.png) center / cover no-repeat;
+    height: 610px;
+    margin-top: 75px;
+
+    &__bg {
+      display: block;
+    }
+
+    .container {
+      height: 100%;
+    }
+
+    &__row,
+    &__wrapper,
+    &__slider-container,
+    &-slider {
+      height: 100%;
+    }
+
+    &-slider {
+      max-width: none;
+    }
+
+    &__wrapper {
+      margin: 0;
+    }
+
+    &__title {
+      text-align: start;
+      font-size: 36px;
+    }
+
+    .pagination {
+      display: none;
+    }
+
+    .review {
+      max-width: 350px;
+      position: absolute;
+      margin: 0 !important;
+      font-size: 14px;
+      line-height: 22px;
+
+      &__author {
+        align-self: flex-start;
+      }
+
+      &:nth-child(1) {
+        right: 0;
+        bottom: 0;
+        bottom: 0;
+        transform: translate(0%, -30%);
+        max-width: 300px;
+      }
+
+      &:nth-child(2) {
+        left: 0;
+        top: 50%;
+        transform: translate(0%, -50%);
+        max-width: 350px;
+      }
+
+      &:nth-child(3) {
+        right: 0;
+        top: 0;
+        transform: translate(-5%, 0);
+      }
+    }
+
+    .reviews__slider-container {
+      position: static;
+    }
+
+    .reviews-slider {
+      position: static;
+
+      &__wrapper {
+        position: static;
+      }
+    }
+  }
+
+  @media (min-width: 920px) {
+    .review {
+      &:nth-child(1) {
+        max-width: 400px;
+      }
+    }
+  }
+
+  @media (min-width: 1080px) {
+    .review {
+      &__wrapper {
+        padding: 30px 40px;
+      }
+    }
+  }
+
+  @media (min-width: 1180px) {
+    height: 660px;
+
+    .review {
+      &:nth-child(3) {
+        max-width: 450px;
+      }
+    }
+  }
+}
+
+// === Оставить заявку ===
+.enroll {
+  background: #7ACAD8 url(../images/pattern-cherries.png) center / cover no-repeat;
+  margin-top: 60px;
+  // transform: translate(0, -27%); ### НЕ УДАЛЯТЬ ###
+
+  &__row {
+    padding: 120px 0 40px 0;
+  }
+
+  &__line {
+    
+  }
+
+  .decor-image {
+    display: none;
+    align-self: flex-end;
+    position: relative;
+
+    &__add-image-block {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-15%, -85%);
+    }
+
+    &__text {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 30px;
+      text-align: center;
+      width: 80%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -60%);
+    }
+  }
+
+  &__form-block {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.25);
+    border: 1.5px solid #E8E8E8;
+    padding: 20px 35px;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    text-align: center;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 22px;
+
+    b {
+      font-weight: 700;
+      font-size: 14px;
+    }
+  }
+
+  // Форма
+  .request-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+
+    &__input {
+      border: 1.5px solid #E8E8E8;
+      border-radius: 5px;
+      font-weight: 400;
+      font-size: 12px;
+      padding: 8px 12px;
+    }
+
+    &__submit {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 30px;
+      padding: 4px 20px;
+      margin-top: 15px;
+    }
+  }
+
+  &__note {
+    margin-top: 25px;
+    font-weight: 400;
+    font-size: 6px;
+    line-height: 10px;
+    text-align: center;
+  }
+
+  @media (min-width: 880px) {
+    &__title {
+      margin-bottom: 26px;
+    }
+
+    &__line {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .decor-image {
+      display: block;
+    }
+
+    &__form-block {
+      margin: 0;
+      padding: 50px 55px 28px 55px;
+    }
+
+    &__title {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 30px;
+
+      b {
+        font-weight: 700;
+        font-size: 24px;
+      }
+    }
+
+    &__note {
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 20px;
+    }
+
+    .request-form {
+      &__input {
+        font-size: 14px;
+        padding: 13px;
+      }
+
+      &__submit {
+        font-size: 18px;
+        padding: 8px 20px;
+      }
+    }
+  }
+} 
+
+// === Подвал ===
+.footer {
+  background: #000;
+
+  .logo {
+    display: none;
+  }
+
+  &__wrapper-top {
+    display: flex;
+    flex-direction: column;
+    padding: 25px 0;
+  }
+
+  &__bottom {
+    margin-top: 8px;
+    border-top: 1px solid #3D3D3D;
+    padding: 7px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+
+    span {
+      color: #B2B2B2;
+      font-weight: 400;
+      font-size: 12px;
+    }
+  }
+
+  .contacts {
+    &__list {
+      flex-direction: column;
+      row-gap: 20px;
+    }
+
+    &-item {
+      color: #fff;
+      align-items: center;
+      column-gap: 12px;
+      line-height: 18px;
+      display: grid;
+      grid-template-columns: 20% auto;
+      justify-content: center;
+      justify-items: end;
+
+      &__icon-block {
+        background: #C4C4C4;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        position: relative;
+      }
+
+      &.large {
+        width: 50px;
+        height: 50px;
+      }
+
+      &__icon {
+        width: 33px;
+        height: 33px;
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        transform: translate(-50%);
+
+        &.large__icon {
+          display: none;
+          width: 45px;
+          height: 45px;
+        }
+      }
+
+      &__title {
+        font-size: 14px;
+        font-weight: 400;
+        margin-bottom: 3px;
+      }
+
+      &__value {
+        font-weight: 600;
+        font-size: 14px;
+      }
+
+      a {
+        font-weight: 600;
+        font-size: 16px;
+
+        & ~ .contacts-item__value {
+          font-weight: 400;
+          font-size: 11px;
+          line-height: 13px;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 615px) {
+    .contacts {
+      &-item {
+        justify-content: end;
+      }
+    }
+
+    .logo {
+      display: block;
+    }
+
+    &__wrapper-top {
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
+
+  @media (min-width: 870px) {
+    background: #494949;
+
+    &__bottom {
+      border-top: 1px solid #C4C4C4;
+    }
+
+    .contacts {
+      &__list {
+        flex-direction: row;
+        column-gap: 30px;
+      }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    &__wrapper-top {
+      justify-content: space-between;
+    }
+
+    .contacts__list {
+      column-gap: 60px;
+    }
+
+    .contacts-item {
+      &__icon {
+        &.large__icon {
+          display: block;
         }
       }
     }
