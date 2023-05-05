@@ -214,6 +214,6 @@ function setCorrectIntlInputs() {
 }
 
 
-// console.log = {};
-// console.error = {};
-// console.warn = {};
+console.log = {};
+console.error = {};
+console.warn = {};
