@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     setCorrectSliders();
     setCorrectLazyLoad();
     setCorrectVideoPopups();
+    setCorrectFormPopup();
+    setCorrectFormValidity();
+    setCorrectIntlInputs();
   } catch(err) {
     console.error(err);
   }
@@ -101,6 +104,115 @@ function setCorrectVideoPopups() {
     });
   });
 }
+
+// Попапы с формой
+function setCorrectFormPopup() {
+  const triggers = document.querySelectorAll('.trigger');
+  const wrapper = document.querySelector('.wrapper');
+  const preventFocus = () => {
+    document.documentElement.classList.add('unscroll');
+    wrapper.inert = true;
+  };
+  const resumeFocus = () => {
+    document.documentElement.classList.remove('unscroll');
+    wrapper.inert = false;
+  };
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      const popupSelector = trigger.dataset.popupSelector;
+      const popup = document.querySelector(popupSelector);
+      const popupRow = popup.querySelector('.popup__row');
+      const popupInput = popup.querySelector('input');
+      const popupForm = popup.querySelector('form');
+      const hidePopup = (event) => {
+        if (event.target !== popupRow) return;
+
+        popup.classList.remove('active');
+        document.removeEventListener('click', hidePopup);
+        resumeFocus(); // Возобновляем возможность выделять фокусом элементы на странице
+      };
+      
+      const outerTriggerForm = trigger.closest('form');
+      // Обрываем функцию если триггер находится в форме и она не валидна
+      if (outerTriggerForm && outerTriggerForm.dataset.isValid !== 'true') {
+        return;
+      }
+      
+      preventFocus(); // Запрещаем выделять фокусом элементы сзади
+      popup.classList.add('active');
+
+      // Если в попапе есть форма - ставим на неё обработчик
+      if (popupForm) {
+        popupForm.addEventListener('submit', (event) => {
+          event.preventDefault();
+          // ... Отправка данных формы куда-либо
+          popup.classList.remove('active');
+          resumeFocus();
+        });
+      }
+
+      // Если в попапе есть инпут - фокусируемся на нём
+      if (popupInput) {
+        setTimeout(() => {
+          popupInput.focus();
+        }, 100);
+      }
+
+      document.addEventListener('click', hidePopup);
+    });
+  });
+}
+
+// Проверка валидности формы
+function setCorrectFormValidity() {
+  const forms = document.querySelectorAll('form');
+  const enterKeyId = 13;
+  
+  forms.forEach((form) => {
+    const formSubmit = form.querySelector('[type="submit"]');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+    });
+    
+    Array.from(form.children).forEach((child) => {
+      child.addEventListener('input', (event) => {
+        form.dataset.isValid = false;
+        const isValid = form.reportValidity();
+        form.dataset.isValid = isValid;
+        child.focus();
+      });
+
+      child.addEventListener('keypress', (event) => {      
+        if (event.keyCode === enterKeyId) {
+          event.preventDefault();
+
+          // Грубое сравнение со строкой - потому что в data-атрибутах всё является строками
+          if (form.dataset.isValid === "true") {
+            formSubmit.click();
+          }
+        }
+      });
+    });
+  });
+}
+
+// Международные номера в поле ввода телефона
+function setCorrectIntlInputs() {
+  var inputs = document.querySelectorAll("input[type='tel']");
+
+  inputs.forEach((input) => {
+    window.intlTelInput(input, {
+      initialCountry: "ru",
+      autoPlaceholder: 'aggressive',
+      customPlaceholder: function(selectedCountryPlaceholder, selectedCountryData) {
+        return 'например: ' + selectedCountryPlaceholder;
+      },
+    });
+  });
+}
+
 
 // console.log = {};
 // console.error = {};
