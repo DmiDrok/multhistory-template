@@ -22,10 +22,12 @@ html(lang="ru")
     script(defer src="./js/libs/intlTelInput.min.js")
     
     //- Jquery
-    script(defer src="./js/libs/jquery@3.6.4.min.js")
+    //- script(defer src="./js/libs/jquery@3.6.4.min.js")
 
-    //- MagnificPopup
-    script(defer src="./js/libs/magnific-popup.min.js")
+    //- //- MagnificPopup
+    //- script(defer src="./js/libs/magnific-popup.min.js")
+
+    script(defer src="./js/libs/fslightbox.js")
 
     //- Gsap
     script(defer src="./js/libs/ScrollTrigger.min.js")
@@ -324,27 +326,27 @@ html(lang="ru")
               h2.videos__title Посмотрите мультфильмы с мастер-классов
               
               .videos__content
-                .video-iframe-link(data-href="./videos/video.mp4")
+                a.video-iframe-link(data-fslightbox="video-1" href="./videos/video.mp4")
                   picture
                     source(type="image/webp" srcset="#" data-srcset="./images/pattern-video.webp")
                     img.lazy.video-iframe-link__bg(src="#" alt="" data-src="./images/pattern-video.jpg" aria-hidden="true")
                   .video-iframe-link__play-icon
-                a.video-iframe-link(href="./videos/video.mp4")
+                a.video-iframe-link(data-fslightbox="video-2" href="./videos/video.mp4")
                   picture
                     source(type="image/webp" srcset="#" data-srcset="./images/pattern-video.webp")
                     img.lazy.video-iframe-link__bg(src="#" alt="" data-src="./images/pattern-video.jpg" aria-hidden="true")
                   .video-iframe-link__play-icon
-                a.video-iframe-link(href="./videos/video.mp4")
+                a.video-iframe-link(data-fslightbox="video-3" href="./videos/video.mp4")
                   picture
                     source(type="image/webp" srcset="#" data-srcset="./images/pattern-video.webp")
                     img.lazy.video-iframe-link__bg(src="#" alt="" data-src="./images/pattern-video.jpg" aria-hidden="true")
                   .video-iframe-link__play-icon
-                a.video-iframe-link(href="./videos/video.mp4")
+                a.video-iframe-link(data-fslightbox="video-4" href="./videos/video.mp4")
                   picture
                     source(type="image/webp" srcset="#" data-srcset="./images/pattern-video.webp")
                     img.lazy.video-iframe-link__bg(src="#" alt="" data-src="./images/pattern-video.jpg" aria-hidden="true")
                   .video-iframe-link__play-icon
-                a.video-iframe-link(href="./videos/video.mp4")
+                a.video-iframe-link(data-fslightbox="video-5" href="./videos/video.mp4")
                   picture
                     source(type="image/webp" srcset="#" data-srcset="./images/pattern-video.webp")
                     img.lazy.video-iframe-link__bg(src="#" alt="" data-src="./images/pattern-video.jpg" aria-hidden="true")

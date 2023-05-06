@@ -57,6 +57,7 @@
 .video-iframe-link {
   position: relative;
   z-index: 100;
+  cursor: pointer;
 
   &__bg {
     position: absolute;

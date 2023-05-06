@@ -2887,6 +2887,7 @@ img.mfp-img {
 .video-iframe-link {
   position: relative;
   z-index: 100;
+  cursor: pointer;
 }
 .video-iframe-link__bg {
   position: absolute;

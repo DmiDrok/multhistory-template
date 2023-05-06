@@ -206,16 +206,17 @@ function setCorrectIntlInputs() {
 
 // Всплывающие окна с видео
 function setCorrectVideoPopups() {
-  $('.video-iframe-link').on('click', function(event) {
-    event.preventDefault();
-  });
+  for (let i = 1; i < 6; i++) {
+    const videoKey = `video-${i}`;
 
-  $('.video-iframe-link').magnificPopup({
-    src: this.dataset.href,
-    type:'iframe',
-  });
+    fsLightboxInstances[videoKey].props.onOpen = function() {
+      const video = fsLightboxInstances[videoKey].elements.container.querySelector('video');
+      video.volume = 0.5;
+      video.play();
+    }
+  }
 }
 
-// console.log = {};
-// console.error = {};
-// console.warn = {};
+console.log = {};
+console.error = {};
+console.warn = {};
