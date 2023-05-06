@@ -206,6 +206,10 @@ function setCorrectIntlInputs() {
 
 // Всплывающие окна с видео
 function setCorrectVideoPopups() {
+  $('.video-iframe-link').on('click', function(event) {
+    event.preventDefault();
+  });
+
   $('.video-iframe-link').magnificPopup({
     type:'iframe',
   });
