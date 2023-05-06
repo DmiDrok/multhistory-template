@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setCorrectFormPopup();
     setCorrectFormValidity();
     setCorrectIntlInputs();
+    setCorrectVideoPopups();
   } catch (err) {
     console.error(err);
   }
@@ -20,7 +21,8 @@ function setCorrectSliders() {
       slidesPerView: 1,
       grabCursor: true,
       autoplay: {
-        delay: 3500
+        delay: 3500,
+        disableOnInteraction: false
       },
       pagination: {
         el: '.welcome-slider__pagination',
@@ -84,7 +86,9 @@ function setCorrectSliders() {
 
 // Ленивая загрузка
 function setCorrectLazyLoad() {
-  var lazy = new LazyLoad();
+  var lazy = new LazyLoad({
+    threshold: 330
+  });
 }
 
 // Попапы с формой
@@ -107,12 +111,13 @@ function setCorrectFormPopup() {
       var popupInput = popup.querySelector('input');
       var popupForm = popup.querySelector('form');
       var hidePopup = function hidePopup(event) {
-        if (event.target !== popupRow) return;
+        var escKeyId = 27;
+        if (event.target !== popupRow && event.keyCode !== escKeyId) return;
         popup.classList.remove('active');
         document.removeEventListener('click', hidePopup);
-        resumeFocus(); // Возобновляем возможность выделять фокусом элементы на странице
+        resumeFocus(); // Возобновляем возможность выделять фокусом элементы на странице        
+        trigger.focus();
       };
-
       var outerTriggerForm = trigger.closest('form');
       // Обрываем функцию если триггер находится в форме и она не валидна
       if (outerTriggerForm && outerTriggerForm.dataset.isValid !== 'true') {
@@ -127,7 +132,6 @@ function setCorrectFormPopup() {
           event.preventDefault();
           // ... Отправка данных формы куда-либо
           popup.classList.remove('active');
-          resumeFocus();
         });
       }
 
@@ -138,6 +142,7 @@ function setCorrectFormPopup() {
         }, 100);
       }
       document.addEventListener('click', hidePopup);
+      document.addEventListener('keydown', hidePopup);
     });
   });
 }
@@ -183,6 +188,13 @@ function setCorrectIntlInputs() {
         return 'например: ' + selectedCountryPlaceholder;
       }
     });
+  });
+}
+
+// Всплывающие окна с видео
+function setCorrectVideoPopups() {
+  $('.video-iframe-link').magnificPopup({
+    type: 'iframe'
   });
 }
 console.log = {};
