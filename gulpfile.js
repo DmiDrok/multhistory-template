@@ -39,5 +39,5 @@ module.exports.dev = startDev;
 
 // === Режим для продакшна ===
 // const startBuild = series(preprosAll, fullImages, buildJs, moveFiles);
-const startBuild = series(preprosAll, devWay.imagesToMin, buildJs, moveFiles);
+const startBuild = series(preprosAll, buildJs, moveFiles);
 module.exports.build = startBuild;

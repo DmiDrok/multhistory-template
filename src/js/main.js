@@ -2,10 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
   try {
     setCorrectSliders();
     setCorrectLazyLoad();
-    setCorrectVideoPopups();
     setCorrectFormPopup();
     setCorrectFormValidity();
     setCorrectIntlInputs();
+    setCorrectVideoPopups();
   } catch(err) {
     console.error(err);
   }
@@ -20,6 +20,7 @@ function setCorrectSliders() {
       grabCursor: true,
       autoplay: {
         delay: 3500,
+        disableOnInteraction: false,
       },
       pagination: {
         el: '.welcome-slider__pagination',
@@ -84,24 +85,8 @@ function setCorrectSliders() {
 
 // Ленивая загрузка
 function setCorrectLazyLoad() {
-  const lazy = new LazyLoad();
-}
-
-// Попапы с видео
-function setCorrectVideoPopups() {
-  const links = document.querySelectorAll('.video-iframe-link');
-
-  links.forEach((link) => {
-    link.addEventListener('click', (event) => {
-      event.preventDefault();
-      
-      new Fancybox([
-        {
-          src: link.href,
-          type: "video",
-        },
-      ]);
-    });
+  const lazy = new LazyLoad({
+    threshold: 330,
   });
 }
 
@@ -126,11 +111,13 @@ function setCorrectFormPopup() {
       const popupInput = popup.querySelector('input');
       const popupForm = popup.querySelector('form');
       const hidePopup = (event) => {
-        if (event.target !== popupRow) return;
+        const escKeyId = 27;
+        if (event.target !== popupRow && event.keyCode !== escKeyId) return;
 
         popup.classList.remove('active');
         document.removeEventListener('click', hidePopup);
-        resumeFocus(); // Возобновляем возможность выделять фокусом элементы на странице
+        resumeFocus(); // Возобновляем возможность выделять фокусом элементы на странице        
+        trigger.focus();
       };
       
       const outerTriggerForm = trigger.closest('form');
@@ -148,7 +135,6 @@ function setCorrectFormPopup() {
           event.preventDefault();
           // ... Отправка данных формы куда-либо
           popup.classList.remove('active');
-          resumeFocus();
         });
       }
 
@@ -160,6 +146,7 @@ function setCorrectFormPopup() {
       }
 
       document.addEventListener('click', hidePopup);
+      document.addEventListener('keydown', hidePopup);
     });
   });
 }
@@ -213,6 +200,12 @@ function setCorrectIntlInputs() {
   });
 }
 
+// Всплывающие окна с видео
+function setCorrectVideoPopups() {
+  $('.video-iframe-link').magnificPopup({
+    type:'iframe',
+  });
+}
 
 console.log = {};
 console.error = {};
