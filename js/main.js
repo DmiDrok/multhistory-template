@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
     console.error(err);
   }
 });
+window.addEventListener('resize', function () {
+  location.reload();
+});
 
 // Слайдеры
 function setCorrectSliders() {
@@ -74,7 +77,7 @@ function setCorrectSliders() {
         bulletActiveClass: 'pagination-bullet_active'
       }
     });
-    if (window.matchMedia('(min-width: 720px)').matches) {
+    if (window.matchMedia('(min-width: 880px)').matches) {
       reviewsSwiper.destroy();
     }
   };
