@@ -211,10 +211,11 @@ function setCorrectVideoPopups() {
   });
 
   $('.video-iframe-link').magnificPopup({
+    src: this.dataset.href,
     type:'iframe',
   });
 }
 
-console.log = {};
-console.error = {};
-console.warn = {};
+// console.log = {};
+// console.error = {};
+// console.warn = {};

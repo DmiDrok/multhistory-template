@@ -584,7 +584,13 @@
           <div class="container videos__container">
             <div class="videos__row">
               <h2 class="videos__title">Посмотрите мультфильмы с мастер-классов</h2>
-              <div class="videos__content"><a class="video-iframe-link" href="./videos/video.mp4">
+              <div class="videos__content">
+                <div class="video-iframe-link" data-href="./videos/video.mp4">
+                  <picture>
+                    <source type="image/webp" srcset="#" data-srcset="./images/pattern-video.webp"><img class="lazy video-iframe-link__bg" src="#" alt="" data-src="./images/pattern-video.jpg" aria-hidden="true">
+                  </picture>
+                  <div class="video-iframe-link__play-icon"></div>
+                </div><a class="video-iframe-link" href="./videos/video.mp4">
                   <picture>
                     <source type="image/webp" srcset="#" data-srcset="./images/pattern-video.webp"><img class="lazy video-iframe-link__bg" src="#" alt="" data-src="./images/pattern-video.jpg" aria-hidden="true">
                   </picture>
@@ -600,11 +606,8 @@
                   <picture>
                     <source type="image/webp" srcset="#" data-srcset="./images/pattern-video.webp"><img class="lazy video-iframe-link__bg" src="#" alt="" data-src="./images/pattern-video.jpg" aria-hidden="true">
                   </picture>
-                  <div class="video-iframe-link__play-icon"></div></a><a class="video-iframe-link" href="./videos/video.mp4">
-                  <picture>
-                    <source type="image/webp" srcset="#" data-srcset="./images/pattern-video.webp"><img class="lazy video-iframe-link__bg" src="#" alt="" data-src="./images/pattern-video.jpg" aria-hidden="true">
-                  </picture>
-                  <div class="video-iframe-link__play-icon"></div></a></div>
+                  <div class="video-iframe-link__play-icon"></div></a>
+              </div>
             </div>
           </div>
         </section>
