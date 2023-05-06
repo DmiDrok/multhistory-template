@@ -2757,7 +2757,7 @@ img.mfp-img {
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(100, 100, 100, 0.8);
+  background: rgba(50, 50, 50, 0.8);
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
@@ -3032,7 +3032,7 @@ img.mfp-img {
 @media (min-width: 880px) {
   .form-block {
     margin: 0;
-    padding: 50px 55px 28px 55px;
+    padding: 50px 25px 28px 25px;
   }
   .form-block__title {
     margin-bottom: 26px;
@@ -3049,6 +3049,21 @@ img.mfp-img {
     font-size: 10px;
     line-height: 20px;
   }
+}
+@media (min-width: 980px) {
+  .form-block {
+    padding: 50px 55px 28px 55px;
+  }
+}
+
+.section-bg-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 html {
@@ -3076,12 +3091,6 @@ body {
 img {
   user-select: none;
   pointer-events: none;
-}
-
-.container {
-  max-width: 1050px;
-  padding: 0 20px;
-  margin: 0 auto;
 }
 
 .what {
@@ -3353,6 +3362,14 @@ img {
     grid-template-rows: repeat(2, 230px);
   }
 }
+@media (min-width: 940px) {
+  .actions__title {
+    text-align: start;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 35px;
+  }
+}
 @media (min-width: 1024px) {
   .actions .action__about {
     font-size: 16px !important;
@@ -3453,6 +3470,10 @@ img {
 .heroes {
   margin-top: 25px;
   background: rgba(251, 241, 141, 0.5019607843);
+  position: relative;
+}
+.heroes__bg {
+  display: none;
 }
 .heroes__row {
   padding: 30px 0;
@@ -3461,7 +3482,12 @@ img {
 .heroes .anim-decor {
   top: 0;
   right: 0;
-  transform: translate(-10%, -30%);
+  transform: translate(-10%, -60%);
+  height: 150px;
+}
+.heroes .anim-decor__image {
+  width: 100%;
+  height: 100%;
 }
 .heroes__title {
   text-align: center;
@@ -3536,8 +3562,8 @@ img {
   padding: 13px 35px;
 }
 @media (min-width: 660px) {
-  .heroes {
-    background: rgba(251, 241, 141, 0.5019607843) url(../images/pattern-stars.png) center/cover no-repeat;
+  .heroes__bg {
+    display: block;
   }
   .heroes .swiper-wrapper {
     column-gap: 10px;
@@ -3565,7 +3591,7 @@ img {
 }
 @media (min-width: 1100px) {
   .heroes .anim-decor {
-    transform: translate(30%, -30%);
+    transform: translate(30%, -60%);
   }
   .heroes__title {
     font-size: 36px;
@@ -3783,6 +3809,7 @@ img {
 .reviews__bg {
   position: absolute;
   z-index: -1;
+  display: none;
 }
 .reviews__bg_main {
   left: 0;
@@ -3812,6 +3839,10 @@ img {
 .reviews__bg_fly-5 {
   left: 7%;
   top: 40%;
+}
+.reviews__bg_fly-6 {
+  bottom: 0;
+  left: 40%;
 }
 .reviews__title {
   display: block;
@@ -3954,11 +3985,27 @@ img {
 }
 
 .enroll {
-  background: #7ACAD8 url(../images/pattern-cherries.png) center/cover no-repeat;
   margin-top: 60px;
+  position: relative;
 }
 .enroll__row {
-  padding: 120px 0 40px 0;
+  padding: 40px 20px 30px 20px;
+}
+.enroll__bg-block {
+  background-color: #7ACAD8;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 150%;
+  transform: translate(0, -15%);
+}
+.enroll__bg {
+  z-index: 0;
+}
+.enroll__line {
+  position: relative;
+  z-index: 10;
 }
 .enroll .decor-image {
   display: none;
@@ -3984,6 +4031,10 @@ img {
   transform: translate(-50%, -60%);
 }
 @media (min-width: 880px) {
+  .enroll__bg-block {
+    transform: translate(0, 0);
+    height: 100%;
+  }
   .enroll__line {
     display: flex;
     justify-content: space-between;
@@ -4008,6 +4059,8 @@ img {
 
 .footer {
   background: #000;
+  position: relative;
+  z-index: 10;
 }
 .footer .logo {
   display: none;

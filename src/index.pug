@@ -27,8 +27,13 @@ html(lang="ru")
     //- MagnificPopup
     script(defer src="./js/libs/magnific-popup.min.js")
 
+    //- Gsap
+    script(defer src="./js/libs/ScrollTrigger.min.js")
+    script(defer src="./js/libs/gsap.min.js")
+
     link(rel="stylesheet" href="./css/style.min.css")
     script(defer src="./js/main.js")
+    script(defer src="./js/animations.js")
   body
     include includes/popup-form
     include includes/popup-accept
@@ -80,20 +85,12 @@ html(lang="ru")
                 .welcome-slider__main.swiper
                   .swiper-wrapper
                     .swiper-slide.welcome-slider__slide
-                      //- picture
-                        //- source(srcset="./images/slide-photo-1-large.jpg" type="image/jpeg" media="(min-width: 695px)")
                       img.welcome-slider__slide-content(src="./images/slide-photo-1.jpg" alt="Дети на мастер-классе")
                     .swiper-slide.welcome-slider__slide
-                      //- picture
-                        //- source(srcset="./images/slide-photo-2-large.jpg" type="image/jpeg" media="(min-width: 695px)")
                       img.welcome-slider__slide-content(src="./images/slide-photo-2.jpg" alt="Дети на мастер-классе")
                     .swiper-slide.welcome-slider__slide
-                      //- picture
-                        //- source(srcset="./images/slide-photo-3-large.jpg" type="image/jpeg" media="(min-width: 695px)")
                       img.welcome-slider__slide-content(src="./images/slide-photo-3.jpg" alt="Дети на мастер-классе")
                     .swiper-slide.welcome-slider__slide
-                      //- picture
-                        //- source(srcset="./images/slide-photo-4-large.jpg" type="image/jpeg" media="(min-width: 695px)")
                       img.welcome-slider__slide-content(src="./images/slide-photo-4.jpg" alt="Дети на мастер-классе")
 
                 .pagination.welcome-slider__pagination
@@ -102,9 +99,13 @@ html(lang="ru")
           .container.what__container
             .what__row
               .anim-decor
-                img.anim-decor__image.anim-decor__image_default(src="./images/anim-1-default.png" alt="" aria-hidden="true")
-                img.anim-decor__image.anim-decor__image_active(src="./images/anim-1-active.png" alt="" aria-hidden="true")
+                picture
+                  source(type="image/webp" srcset="./images/anim-1-default.webp")
+                  img.anim-decor__image.anim-decor__image_default(src="./images/anim-1-default.png" alt="" aria-hidden="true")
 
+                picture
+                  source(type="image/webp" srcset="./images/anim-1-active.webp")
+                  img.anim-decor__image.anim-decor__image_active(src="./images/anim-1-active.png" alt="" aria-hidden="true")
 
               h2.what__title Что такое мастер-класс по мультипликации?
 
@@ -114,13 +115,15 @@ html(lang="ru")
                   p.what__text На мастер-классе дети узнают о мультипликации, фантазируют, создают настоящий мультфильм, играют и веселятся!
                   .decor-image
                     .decor-image__add-image-block
-                      img.lazy(src="#" data-src="./images/message-1.png" alt="" aria-hidden="true")
+                      picture
+                        source(type="image/webp" srcset="#" data-srcset="./images/message-1.webp")
+                        img.lazy(src="#" data-src="./images/message-1.png" alt="" aria-hidden="true")
                       p.decor-image__text.
                         Снимать мультики - это весело!
                     .decor-image__main-image-block
-                      img.lazy(src="#" data-src="./images/lumi-large.png" alt="" aria-hidden="true")
-
-                
+                      picture
+                        source(type="image/webp" srcset="#" data-srcset="./images/lumi-large.webp")
+                        img.lazy(src="#" data-src="./images/lumi-large.png" alt="" aria-hidden="true")
 
                 .what__grid
                   ul.what-list
@@ -145,7 +148,9 @@ html(lang="ru")
                         span.what-item__title от 300 руб.
                         span.what-item__value Стоимость участия
 
-                  img.what__image.what__image_small(src="./images/lumi-small.png" alt="Снимать мультики - это весело!")
+                  picture
+                    source(type="image/webp" srcset="#" data-srcset="./images/lumi-small.webp")
+                    img.lazy.what__image.what__image_small(src="#" data-src="./images/lumi-small.png" alt="Снимать мультики - это весело!")
 
         section.actions#actions
           .container.actions__container
@@ -247,11 +252,20 @@ html(lang="ru")
                       p.point__about Что такое мультипликация? Когда и как был снят первый мультфильм? Какие техники мультипликации существуют? И мнногое-многое другое.
                   
         section.heroes#heroes
+          picture
+            source(type="image/webp" srcset="#" data-srcset="./images/pattern-stars.webp")
+            img.lazy.section-bg-img.heroes__bg(src="#" data-src="./images/pattern-stars.png" alt="" aria-hidden="true")
+
           .container.heroes__container
             .heroes__row
               .anim-decor
-                img.anim-decor__image.anim-decor__image_default(src="./images/anim-2-default.png" alt="" aria-hidden="true")
-                img.anim-decor__image.anim-decor__image_active(src="./images/anim-2-active.png" alt="" aria-hidden="true")
+                picture
+                  source(type="image/webp" srcset="./images/anim-2-default.webp")
+                  img.anim-decor__image.anim-decor__image_default(src="./images/anim-2-default.png" alt="" aria-hidden="true")
+
+                picture
+                  source(type="image/webp" srcset="./images/anim-2-active.webp")
+                  img.anim-decor__image.anim-decor__image_active(src="./images/anim-2-active.png" alt="" aria-hidden="true")
 
               h2.heroes__title Ваш ребенок встретится с любимыми героями
               p.heroes__subtitle Динозавры, Пираты, LEGO, Гарри Поттер, Монстры на каникулах, Черепашки ниндзя, Мимимишки, Роботы, Миньоны, Космос, Щенячий патруль, Ледибаг, Супер-кот, Майнкрафт и многие-многие другие!
@@ -261,15 +275,15 @@ html(lang="ru")
                 .heroes-slider.swiper
                   .heroes-slider__wrapper.swiper-wrapper
                     .heroes-slider__slide.swiper-slide
-                      img.heroes-slider__image(src="./images/heroes-slider-photo-1.jpg", alt="Любимые герои детей")
-                      img.heroes-slider__image(src="./images/heroes-slider-photo-2.jpg", alt="Любимые герои детей")
-                      img.heroes-slider__image(src="./images/heroes-slider-photo-3.jpg", alt="Любимые герои детей")
-                      img.heroes-slider__image(src="./images/heroes-slider-photo-4.jpg", alt="Любимые герои детей")
+                      img.lazy.heroes-slider__image(src="#" data-src="./images/heroes-slider-photo-1.jpg", alt="Любимые герои детей")
+                      img.lazy.heroes-slider__image(src="#" data-src="./images/heroes-slider-photo-2.jpg", alt="Любимые герои детей")
+                      img.lazy.heroes-slider__image(src="#" data-src="./images/heroes-slider-photo-3.jpg", alt="Любимые герои детей")
+                      img.lazy.heroes-slider__image(src="#" data-src="./images/heroes-slider-photo-4.jpg", alt="Любимые герои детей")
                     .heroes-slider__slide.swiper-slide
-                      img.heroes-slider__image(src="./images/heroes-slider-photo-5.jpg", alt="Любимые герои детей")
-                      img.heroes-slider__image(src="./images/heroes-slider-photo-6.jpg", alt="Любимые герои детей")
-                      img.heroes-slider__image(src="./images/heroes-slider-photo-7.jpg", alt="Любимые герои детей")
-                      img.heroes-slider__image(src="./images/heroes-slider-photo-8.jpg", alt="Любимые герои детей")
+                      img.lazy.heroes-slider__image(src="#" data-src="./images/heroes-slider-photo-5.jpg", alt="Любимые герои детей")
+                      img.lazy.heroes-slider__image(src="#" data-src="./images/heroes-slider-photo-6.jpg", alt="Любимые герои детей")
+                      img.lazy.heroes-slider__image(src="#" data-src="./images/heroes-slider-photo-7.jpg", alt="Любимые герои детей")
+                      img.lazy.heroes-slider__image(src="#" data-src="./images/heroes-slider-photo-8.jpg", alt="Любимые герои детей")
         
                 .pagination.heroes-slider__pagination
 
@@ -298,7 +312,7 @@ html(lang="ru")
                   .heroes-line__col
                     .heroes-line__description-block.heroes__description-block
                       p.heroes__descr-text Запишитесь на мастер-класс с любимыми героями вашего ребенка
-                      button.red-action-btn.heroes__action(type="button") Записаться заранее
+                      button.trigger.red-action-btn.heroes__action(type="button" data-popup-selector=".popup-form") Записаться заранее
 
               .heroes__description-block
                 p.heroes__descr-text Запишитесь на мастер-класс с любимыми героями вашего ребенка
@@ -311,19 +325,29 @@ html(lang="ru")
               
               .videos__content
                 a.video-iframe-link(href="./videos/video.mp4")
-                  img.lazy.video-iframe-link__bg(src="#" alt="" data-src="./images/pattern-video.png" aria-hidden="true")
+                  picture
+                    source(type="image/webp" srcset="#" data-srcset="./images/pattern-video.webp")
+                    img.lazy.video-iframe-link__bg(src="#" alt="" data-src="./images/pattern-video.jpg" aria-hidden="true")
                   .video-iframe-link__play-icon
                 a.video-iframe-link(href="./videos/video.mp4")
-                  img.lazy.video-iframe-link__bg(src="#" alt="" data-src="./images/pattern-video.png" aria-hidden="true")
+                  picture
+                    source(type="image/webp" srcset="#" data-srcset="./images/pattern-video.webp")
+                    img.lazy.video-iframe-link__bg(src="#" alt="" data-src="./images/pattern-video.jpg" aria-hidden="true")
                   .video-iframe-link__play-icon
                 a.video-iframe-link(href="./videos/video.mp4")
-                  img.lazy.video-iframe-link__bg(src="#" alt="" data-src="./images/pattern-video.png" aria-hidden="true")
+                  picture
+                    source(type="image/webp" srcset="#" data-srcset="./images/pattern-video.webp")
+                    img.lazy.video-iframe-link__bg(src="#" alt="" data-src="./images/pattern-video.jpg" aria-hidden="true")
                   .video-iframe-link__play-icon
                 a.video-iframe-link(href="./videos/video.mp4")
-                  img.lazy.video-iframe-link__bg(src="#" alt="" data-src="./images/pattern-video.png" aria-hidden="true")
+                  picture
+                    source(type="image/webp" srcset="#" data-srcset="./images/pattern-video.webp")
+                    img.lazy.video-iframe-link__bg(src="#" alt="" data-src="./images/pattern-video.jpg" aria-hidden="true")
                   .video-iframe-link__play-icon
                 a.video-iframe-link(href="./videos/video.mp4")
-                  img.lazy.video-iframe-link__bg(src="#" alt="" data-src="./images/pattern-video.png" aria-hidden="true")
+                  picture
+                    source(type="image/webp" srcset="#" data-srcset="./images/pattern-video.webp")
+                    img.lazy.video-iframe-link__bg(src="#" alt="" data-src="./images/pattern-video.jpg" aria-hidden="true")
                   .video-iframe-link__play-icon
 
         section.events#events
@@ -367,21 +391,41 @@ html(lang="ru")
                 .motivation__action-block
                   .motivation__action-wrapper
                     .anim-decor
-                      img.anim-decor__image.anim-decor__image_default(src="./images/anim-3-default.png" alt="" aria-hidden="true")
-                      img.anim-decor__image.anim-decor__image_active(src="./images/anim-3-active.png" alt="" aria-hidden="true")
+                      picture
+                        source(type="image/webp" srcset="./images/anim-3-default.webp")
+                        img.anim-decor__image.anim-decor__image_default(src="./images/anim-3-default.png" alt="" aria-hidden="true")
+                      picture
+                        source(type="image/webp" srcset="./images/anim-3-active.png")
+                        img.anim-decor__image.anim-decor__image_active(src="./images/anim-3-active.png" alt="" aria-hidden="true")
                     button.trigger.red-action-btn.motivation__action(type="button" data-popup-selector=".popup-form") Узнать расписание
 
         section.reviews#reviews
           .container.reviews__container
-            img.reviews__bg.reviews__bg_main.lazy(src="#" data-src="./images/attractions-bg.png" alt="" aria-hidden="true")
+            picture
+              source(type="image/webp" srcset="#" data-srcset="./images/attractions-bg.webp")
+              img.lazy.reviews__bg.reviews__bg_main(src="#" data-src="./images/attractions-bg.png" alt="" aria-hidden="true")
             //- Летающий шар
-            img.reviews__bg.reviews__bg_fly-1.lazy(src="#" data-src="./images/fly-1.png" alt="" aria-hidden="true")
+            picture
+              source(type="image/webp" srcset="#" data-srcset="./images/fly-1.webp")
+              img.lazy.reviews__bg.reviews__bg_fly-1(src="#" data-src="./images/fly-1.png" alt="" aria-hidden="true")
             //- Два шарика
-            img.reviews__bg.reviews__bg_fly-2.lazy(src="#" data-src="./images/fly-2.png" alt="" aria-hidden="true")
-            img.reviews__bg.reviews__bg_fly-3.lazy(src="#" data-src="./images/fly-3.png" alt="" aria-hidden="true")
+            picture
+              source(type="image/webp" srcset="#" data-srcset="./images/fly-2.webp")
+              img.lazy.reviews__bg.reviews__bg_fly-2(src="#" data-src="./images/fly-2.png" alt="" aria-hidden="true")
+            picture
+              source(type="image/webp" srcset="#" data-srcset="./images/fly-3.webp")
+              img.lazy.reviews__bg.reviews__bg_fly-3(src="#" data-src="./images/fly-3.png" alt="" aria-hidden="true")
             //- Два облачка
-            img.reviews__bg.reviews__bg_fly-4.lazy(src="#" data-src="./images/fly-4.png" alt="" aria-hidden="true")
-            img.reviews__bg.reviews__bg_fly-5.lazy(src="#" data-src="./images/fly-5.png" alt="" aria-hidden="true")
+            picture
+              source(type="image/webp" srcset="#" data-srcset="./images/fly-4.webp")
+              img.lazy.reviews__bg.reviews__bg_fly-4(src="#" data-src="./images/fly-4.png" alt="" aria-hidden="true")
+            picture
+              source(type="image/webp" srcset="#" data-srcset="./images/fly-5.webp")
+              img.lazy.reviews__bg.reviews__bg_fly-5(src="#" data-src="./images/fly-5.png" alt="" aria-hidden="true")
+            //- Ластик
+            picture
+              source(type="image/webp" srcset="#" data-srcset="./images/fly-6.webp")
+              img.lazy.reviews__bg.reviews__bg_fly-6(src="#" data-src="./images/fly-6.png" alt="" aria-hidden="true")
 
 
             .reviews__row
@@ -393,7 +437,7 @@ html(lang="ru")
                 .reviews__slider-container
                   .reviews-slider.swiper
                     .reviews-slider__wrapper.swiper-wrapper
-                      article.reviews-slider__slide.review.swiper-slide
+                      article.reviews-slider__slide.review.review-1.swiper-slide
                         h2.visually-hidden Отзыв о мастер-классе
 
                         .review__wrapper
@@ -407,7 +451,7 @@ html(lang="ru")
                             спасибо! 👍🏻👍🏻👍🏻
                           span.review__author Елена Надтока
 
-                      article.reviews-slider__slide.review.swiper-slide
+                      article.reviews-slider__slide.review.review-2.swiper-slide
                         h2.visually-hidden Отзыв о мастер-классе
 
                         .review__wrapper
@@ -423,7 +467,7 @@ html(lang="ru")
                             подарок!спасибо!!!!!спасибо!!! 💐
                             💐💐💐💐💐
 
-                      article.reviews-slider__slide.review.swiper-slide
+                      article.reviews-slider__slide.review.review-3.swiper-slide
                         h2.visually-hidden Отзыв о мастер-классе
 
                         .review__wrapper
@@ -437,6 +481,11 @@ html(lang="ru")
                   .pagination.reviews-slider__pagination
 
         section.enroll#enroll
+          .enroll__bg-block
+            picture
+              source(type="image/webp" srcset="#" data-srcset="./images/pattern-cherries.webp")
+              img.lazy.section-bg-img.enroll__bg(src="#" data-src="./images/pattern-cherries.png" alt="" aria-hidden="true")
+
           .container.enroll__container
             .enroll__row
               .enroll__line
@@ -455,14 +504,18 @@ html(lang="ru")
                   
                 .decor-image
                   .decor-image__add-image-block
-                    img.lazy(src="data:image/gif;base64,R0lGODlh2QH7AIAAAP///wAAACH5BAEAAAEALAAAAADZAfsAAAL+jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8btjRw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzZw7e/4MOrTo0aRLmz6NOrXq1axbu34NO7bs2bRr276NO7fu3bx7+/4NPLjw4cSLGz+OPLny5cybO38OPbr06dSrW7+OPbv27dy7e/8OPrz48eTLmz+PPr16wQUAADs=" data-src="./images/message-2.png" alt="" aria-hidden="true")
+                    picture
+                      source(type="image/webp" srcset="#" data-srcset="./images/message-2.webp")
+                      img.lazy(src="data:image/gif;base64,R0lGODlh2QH7AIAAAP///wAAACH5BAEAAAEALAAAAADZAfsAAAL+jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8btjRw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzZw7e/4MOrTo0aRLmz6NOrXq1axbu34NO7bs2bRr276NO7fu3bx7+/4NPLjw4cSLGz+OPLny5cybO38OPbr06dSrW7+OPbv27dy7e/8OPrz48eTLmz+PPr16wQUAADs=" data-src="./images/message-2.png" alt="" aria-hidden="true")
                     p.decor-image__text.
                       Каждый ребенок в детстве 
                       ну просто обязан нарисовать дом, 
                       вылепить дерево
                       и снять мультфильм!
                   .decor-image__main-image-block
-                    img.lazy(src="data:image/gif;base64,R0lGODlhpQBxAIAAAP///wAAACH5BAEAAAEALAAAAAClAHEAAAKnjI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPEycVwAAOw==" data-src="./images/lumi-2.png" alt="" aria-hidden="true")
+                    picture
+                      source(type="image/webp" srcset="#" data-srcset="./images/lumi-2.webp")
+                      img.lazy(src="data:image/gif;base64,R0lGODlhpQBxAIAAAP///wAAACH5BAEAAAEALAAAAAClAHEAAAKnjI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPEycVwAAOw==" data-src="./images/lumi-2.png" alt="" aria-hidden="true")
                     
 
       footer.footer#footer
@@ -501,18 +554,4 @@ html(lang="ru")
             img(src="./images/inst-small-icon.svg" alt="Наш инстаграмм")
 
           span 2016 - 2020 Мультистория
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

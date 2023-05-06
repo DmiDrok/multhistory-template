@@ -9,7 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
   } catch(err) {
     console.error(err);
   }
-})
+});
+
+window.addEventListener('resize', () => {
+  location.reload();
+});
 
 // Слайдеры
 function setCorrectSliders() {
@@ -72,7 +76,7 @@ function setCorrectSliders() {
         bulletActiveClass: 'pagination-bullet_active',
       }
     });
-    if (window.matchMedia('(min-width: 720px)').matches) {
+    if (window.matchMedia('(min-width: 880px)').matches) {
       reviewsSwiper.destroy();
     }
   };
@@ -86,7 +90,7 @@ function setCorrectSliders() {
 // Ленивая загрузка
 function setCorrectLazyLoad() {
   const lazy = new LazyLoad({
-    threshold: 330,
+    threshold: 450, // Значение по умолчанию: 300
   });
 }
 

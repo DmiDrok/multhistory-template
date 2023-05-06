@@ -5,7 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мультистория | Мастерская мультфильмов</title>
-    <style>.header__row {
+    <style>.container {
+  max-width: 1050px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.header__row {
   display: grid;
   justify-items: center;
   grid-row-gap: 6px;
@@ -300,8 +306,11 @@
     <script defer src="./js/libs/intlTelInput.min.js"></script>
     <script defer src="./js/libs/jquery@3.6.4.min.js"></script>
     <script defer src="./js/libs/magnific-popup.min.js"></script>
+    <script defer src="./js/libs/ScrollTrigger.min.js"></script>
+    <script defer src="./js/libs/gsap.min.js"></script>
     <link rel="stylesheet" href="./css/style.min.css">
     <script defer src="./js/main.js"></script>
+    <script defer src="./js/animations.js"></script>
   </head>
   <body>
     <div class="popup popup-form">
@@ -370,16 +379,30 @@
         <section class="what" id="what">
           <div class="container what__container">
             <div class="what__row">
-              <div class="anim-decor"><img class="anim-decor__image anim-decor__image_default" src="./images/anim-1-default.png" alt="" aria-hidden="true"><img class="anim-decor__image anim-decor__image_active" src="./images/anim-1-active.png" alt="" aria-hidden="true"></div>
+              <div class="anim-decor">
+                <picture>
+                  <source type="image/webp" srcset="./images/anim-1-default.webp"><img class="anim-decor__image anim-decor__image_default" src="./images/anim-1-default.png" alt="" aria-hidden="true">
+                </picture>
+                <picture>
+                  <source type="image/webp" srcset="./images/anim-1-active.webp"><img class="anim-decor__image anim-decor__image_active" src="./images/anim-1-active.png" alt="" aria-hidden="true">
+                </picture>
+              </div>
               <h2 class="what__title">Что такое мастер-класс по мультипликации?</h2>
               <div class="what__wrapper">
                 <div class="what__text-block"><span class="what__subtitle">Это незабываемое событие для каждого ребенка </span>
                   <p class="what__text">На мастер-классе дети узнают о мультипликации, фантазируют, создают настоящий мультфильм, играют и веселятся!</p>
                   <div class="decor-image">
-                    <div class="decor-image__add-image-block"><img class="lazy" src="#" data-src="./images/message-1.png" alt="" aria-hidden="true">
+                    <div class="decor-image__add-image-block">
+                      <picture>
+                        <source type="image/webp" srcset="#" data-srcset="./images/message-1.webp"><img class="lazy" src="#" data-src="./images/message-1.png" alt="" aria-hidden="true">
+                      </picture>
                       <p class="decor-image__text">Снимать мультики - это весело!</p>
                     </div>
-                    <div class="decor-image__main-image-block"><img class="lazy" src="#" data-src="./images/lumi-large.png" alt="" aria-hidden="true"></div>
+                    <div class="decor-image__main-image-block">
+                      <picture>
+                        <source type="image/webp" srcset="#" data-srcset="./images/lumi-large.webp"><img class="lazy" src="#" data-src="./images/lumi-large.png" alt="" aria-hidden="true">
+                      </picture>
+                    </div>
                   </div>
                 </div>
                 <div class="what__grid">
@@ -396,7 +419,10 @@
                     <li class="what-item"><img class="what-item__icon" src="./images/what-icon-4.svg" alt="" aria-hidden="true">
                       <div class="what-item__info"><span class="what-item__title">от 300 руб.</span><span class="what-item__value">Стоимость участия</span></div>
                     </li>
-                  </ul><img class="what__image what__image_small" src="./images/lumi-small.png" alt="Снимать мультики - это весело!">
+                  </ul>
+                  <picture>
+                    <source type="image/webp" srcset="#" data-srcset="./images/lumi-small.webp"><img class="lazy what__image what__image_small" src="#" data-src="./images/lumi-small.png" alt="Снимать мультики - это весело!">
+                  </picture>
                 </div>
               </div>
             </div>
@@ -505,16 +531,26 @@
           </div>
         </section>
         <section class="heroes" id="heroes">
+          <picture>
+            <source type="image/webp" srcset="#" data-srcset="./images/pattern-stars.webp"><img class="lazy section-bg-img heroes__bg" src="#" data-src="./images/pattern-stars.png" alt="" aria-hidden="true">
+          </picture>
           <div class="container heroes__container">
             <div class="heroes__row">
-              <div class="anim-decor"><img class="anim-decor__image anim-decor__image_default" src="./images/anim-2-default.png" alt="" aria-hidden="true"><img class="anim-decor__image anim-decor__image_active" src="./images/anim-2-active.png" alt="" aria-hidden="true"></div>
+              <div class="anim-decor">
+                <picture>
+                  <source type="image/webp" srcset="./images/anim-2-default.webp"><img class="anim-decor__image anim-decor__image_default" src="./images/anim-2-default.png" alt="" aria-hidden="true">
+                </picture>
+                <picture>
+                  <source type="image/webp" srcset="./images/anim-2-active.webp"><img class="anim-decor__image anim-decor__image_active" src="./images/anim-2-active.png" alt="" aria-hidden="true">
+                </picture>
+              </div>
               <h2 class="heroes__title">Ваш ребенок встретится с любимыми героями</h2>
               <p class="heroes__subtitle">Динозавры, Пираты, LEGO, Гарри Поттер, Монстры на каникулах, Черепашки ниндзя, Мимимишки, Роботы, Миньоны, Космос, Щенячий патруль, Ледибаг, Супер-кот, Майнкрафт и многие-многие другие!</p>
               <div class="heroes__content">
                 <div class="heroes-slider swiper">
                   <div class="heroes-slider__wrapper swiper-wrapper">
-                    <div class="heroes-slider__slide swiper-slide"><img class="heroes-slider__image" src="./images/heroes-slider-photo-1.jpg" alt="Любимые герои детей"><img class="heroes-slider__image" src="./images/heroes-slider-photo-2.jpg" alt="Любимые герои детей"><img class="heroes-slider__image" src="./images/heroes-slider-photo-3.jpg" alt="Любимые герои детей"><img class="heroes-slider__image" src="./images/heroes-slider-photo-4.jpg" alt="Любимые герои детей"></div>
-                    <div class="heroes-slider__slide swiper-slide"><img class="heroes-slider__image" src="./images/heroes-slider-photo-5.jpg" alt="Любимые герои детей"><img class="heroes-slider__image" src="./images/heroes-slider-photo-6.jpg" alt="Любимые герои детей"><img class="heroes-slider__image" src="./images/heroes-slider-photo-7.jpg" alt="Любимые герои детей"><img class="heroes-slider__image" src="./images/heroes-slider-photo-8.jpg" alt="Любимые герои детей"></div>
+                    <div class="heroes-slider__slide swiper-slide"><img class="lazy heroes-slider__image" src="#" data-src="./images/heroes-slider-photo-1.jpg" alt="Любимые герои детей"><img class="lazy heroes-slider__image" src="#" data-src="./images/heroes-slider-photo-2.jpg" alt="Любимые герои детей"><img class="lazy heroes-slider__image" src="#" data-src="./images/heroes-slider-photo-3.jpg" alt="Любимые герои детей"><img class="lazy heroes-slider__image" src="#" data-src="./images/heroes-slider-photo-4.jpg" alt="Любимые герои детей"></div>
+                    <div class="heroes-slider__slide swiper-slide"><img class="lazy heroes-slider__image" src="#" data-src="./images/heroes-slider-photo-5.jpg" alt="Любимые герои детей"><img class="lazy heroes-slider__image" src="#" data-src="./images/heroes-slider-photo-6.jpg" alt="Любимые герои детей"><img class="lazy heroes-slider__image" src="#" data-src="./images/heroes-slider-photo-7.jpg" alt="Любимые герои детей"><img class="lazy heroes-slider__image" src="#" data-src="./images/heroes-slider-photo-8.jpg" alt="Любимые герои детей"></div>
                   </div>
                 </div>
                 <div class="pagination heroes-slider__pagination"></div>
@@ -532,7 +568,7 @@
                   <div class="heroes-line__col">
                     <div class="heroes-line__description-block heroes__description-block">
                       <p class="heroes__descr-text">Запишитесь на мастер-класс с любимыми героями вашего ребенка</p>
-                      <button class="red-action-btn heroes__action" type="button">Записаться заранее</button>
+                      <button class="trigger red-action-btn heroes__action" type="button" data-popup-selector=".popup-form">Записаться заранее</button>
                     </div>
                   </div>
                 </div>
@@ -548,11 +584,26 @@
           <div class="container videos__container">
             <div class="videos__row">
               <h2 class="videos__title">Посмотрите мультфильмы с мастер-классов</h2>
-              <div class="videos__content"><a class="video-iframe-link" href="./videos/video.mp4"><img class="lazy video-iframe-link__bg" src="#" alt="" data-src="./images/pattern-video.png" aria-hidden="true">
-                  <div class="video-iframe-link__play-icon"></div></a><a class="video-iframe-link" href="./videos/video.mp4"><img class="lazy video-iframe-link__bg" src="#" alt="" data-src="./images/pattern-video.png" aria-hidden="true">
-                  <div class="video-iframe-link__play-icon"></div></a><a class="video-iframe-link" href="./videos/video.mp4"><img class="lazy video-iframe-link__bg" src="#" alt="" data-src="./images/pattern-video.png" aria-hidden="true">
-                  <div class="video-iframe-link__play-icon"></div></a><a class="video-iframe-link" href="./videos/video.mp4"><img class="lazy video-iframe-link__bg" src="#" alt="" data-src="./images/pattern-video.png" aria-hidden="true">
-                  <div class="video-iframe-link__play-icon"></div></a><a class="video-iframe-link" href="./videos/video.mp4"><img class="lazy video-iframe-link__bg" src="#" alt="" data-src="./images/pattern-video.png" aria-hidden="true">
+              <div class="videos__content"><a class="video-iframe-link" href="./videos/video.mp4">
+                  <picture>
+                    <source type="image/webp" srcset="#" data-srcset="./images/pattern-video.webp"><img class="lazy video-iframe-link__bg" src="#" alt="" data-src="./images/pattern-video.jpg" aria-hidden="true">
+                  </picture>
+                  <div class="video-iframe-link__play-icon"></div></a><a class="video-iframe-link" href="./videos/video.mp4">
+                  <picture>
+                    <source type="image/webp" srcset="#" data-srcset="./images/pattern-video.webp"><img class="lazy video-iframe-link__bg" src="#" alt="" data-src="./images/pattern-video.jpg" aria-hidden="true">
+                  </picture>
+                  <div class="video-iframe-link__play-icon"></div></a><a class="video-iframe-link" href="./videos/video.mp4">
+                  <picture>
+                    <source type="image/webp" srcset="#" data-srcset="./images/pattern-video.webp"><img class="lazy video-iframe-link__bg" src="#" alt="" data-src="./images/pattern-video.jpg" aria-hidden="true">
+                  </picture>
+                  <div class="video-iframe-link__play-icon"></div></a><a class="video-iframe-link" href="./videos/video.mp4">
+                  <picture>
+                    <source type="image/webp" srcset="#" data-srcset="./images/pattern-video.webp"><img class="lazy video-iframe-link__bg" src="#" alt="" data-src="./images/pattern-video.jpg" aria-hidden="true">
+                  </picture>
+                  <div class="video-iframe-link__play-icon"></div></a><a class="video-iframe-link" href="./videos/video.mp4">
+                  <picture>
+                    <source type="image/webp" srcset="#" data-srcset="./images/pattern-video.webp"><img class="lazy video-iframe-link__bg" src="#" alt="" data-src="./images/pattern-video.jpg" aria-hidden="true">
+                  </picture>
                   <div class="video-iframe-link__play-icon"></div></a></div>
             </div>
           </div>
@@ -590,7 +641,14 @@
                 </div>
                 <div class="motivation__action-block">
                   <div class="motivation__action-wrapper">
-                    <div class="anim-decor"><img class="anim-decor__image anim-decor__image_default" src="./images/anim-3-default.png" alt="" aria-hidden="true"><img class="anim-decor__image anim-decor__image_active" src="./images/anim-3-active.png" alt="" aria-hidden="true"></div>
+                    <div class="anim-decor">
+                      <picture>
+                        <source type="image/webp" srcset="./images/anim-3-default.webp"><img class="anim-decor__image anim-decor__image_default" src="./images/anim-3-default.png" alt="" aria-hidden="true">
+                      </picture>
+                      <picture>
+                        <source type="image/webp" srcset="./images/anim-3-active.png"><img class="anim-decor__image anim-decor__image_active" src="./images/anim-3-active.png" alt="" aria-hidden="true">
+                      </picture>
+                    </div>
                     <button class="trigger red-action-btn motivation__action" type="button" data-popup-selector=".popup-form">Узнать расписание</button>
                   </div>
                 </div>
@@ -599,14 +657,35 @@
           </div>
         </section>
         <section class="reviews" id="reviews">
-          <div class="container reviews__container"><img class="reviews__bg reviews__bg_main lazy" src="#" data-src="./images/attractions-bg.png" alt="" aria-hidden="true"><img class="reviews__bg reviews__bg_fly-1 lazy" src="#" data-src="./images/fly-1.png" alt="" aria-hidden="true"><img class="reviews__bg reviews__bg_fly-2 lazy" src="#" data-src="./images/fly-2.png" alt="" aria-hidden="true"><img class="reviews__bg reviews__bg_fly-3 lazy" src="#" data-src="./images/fly-3.png" alt="" aria-hidden="true"><img class="reviews__bg reviews__bg_fly-4 lazy" src="#" data-src="./images/fly-4.png" alt="" aria-hidden="true"><img class="reviews__bg reviews__bg_fly-5 lazy" src="#" data-src="./images/fly-5.png" alt="" aria-hidden="true">
+          <div class="container reviews__container">
+            <picture>
+              <source type="image/webp" srcset="#" data-srcset="./images/attractions-bg.webp"><img class="lazy reviews__bg reviews__bg_main" src="#" data-src="./images/attractions-bg.png" alt="" aria-hidden="true">
+            </picture>
+            <picture>
+              <source type="image/webp" srcset="#" data-srcset="./images/fly-1.webp"><img class="lazy reviews__bg reviews__bg_fly-1" src="#" data-src="./images/fly-1.png" alt="" aria-hidden="true">
+            </picture>
+            <picture>
+              <source type="image/webp" srcset="#" data-srcset="./images/fly-2.webp"><img class="lazy reviews__bg reviews__bg_fly-2" src="#" data-src="./images/fly-2.png" alt="" aria-hidden="true">
+            </picture>
+            <picture>
+              <source type="image/webp" srcset="#" data-srcset="./images/fly-3.webp"><img class="lazy reviews__bg reviews__bg_fly-3" src="#" data-src="./images/fly-3.png" alt="" aria-hidden="true">
+            </picture>
+            <picture>
+              <source type="image/webp" srcset="#" data-srcset="./images/fly-4.webp"><img class="lazy reviews__bg reviews__bg_fly-4" src="#" data-src="./images/fly-4.png" alt="" aria-hidden="true">
+            </picture>
+            <picture>
+              <source type="image/webp" srcset="#" data-srcset="./images/fly-5.webp"><img class="lazy reviews__bg reviews__bg_fly-5" src="#" data-src="./images/fly-5.png" alt="" aria-hidden="true">
+            </picture>
+            <picture>
+              <source type="image/webp" srcset="#" data-srcset="./images/fly-6.webp"><img class="lazy reviews__bg reviews__bg_fly-6" src="#" data-src="./images/fly-6.png" alt="" aria-hidden="true">
+            </picture>
             <div class="reviews__row">
               <h2 class="visually-hidden">Отзывы</h2><span class="reviews__title">Что говорят родители?</span>
               <div class="reviews__wrapper">
                 <div class="reviews__slider-container">
                   <div class="reviews-slider swiper">
                     <div class="reviews-slider__wrapper swiper-wrapper">
-                      <article class="reviews-slider__slide review swiper-slide">
+                      <article class="reviews-slider__slide review review-1 swiper-slide">
                         <h2 class="visually-hidden">Отзыв о мастер-классе</h2>
                         <div class="review__wrapper">
                           <p class="review__text">
@@ -620,7 +699,7 @@
                           </p><span class="review__author">Елена Надтока</span>
                         </div>
                       </article>
-                      <article class="reviews-slider__slide review swiper-slide">
+                      <article class="reviews-slider__slide review review-2 swiper-slide">
                         <h2 class="visually-hidden">Отзыв о мастер-классе</h2>
                         <div class="review__wrapper">
                           <p class="review__text">
@@ -638,7 +717,7 @@
                           </p>
                         </div>
                       </article>
-                      <article class="reviews-slider__slide review swiper-slide">
+                      <article class="reviews-slider__slide review review-3 swiper-slide">
                         <h2 class="visually-hidden">Отзыв о мастер-классе</h2>
                         <div class="review__wrapper">
                           <p class="review__text">
@@ -658,6 +737,11 @@
           </div>
         </section>
         <section class="enroll" id="enroll">
+          <div class="enroll__bg-block">
+            <picture>
+              <source type="image/webp" srcset="#" data-srcset="./images/pattern-cherries.webp"><img class="lazy section-bg-img enroll__bg" src="#" data-src="./images/pattern-cherries.png" alt="" aria-hidden="true">
+            </picture>
+          </div>
           <div class="container enroll__container">
             <div class="enroll__row">
               <div class="enroll__line">
@@ -671,7 +755,10 @@
                   <div class="form-block__note">Нажимая на кнопку “Отправить”, <br>вы даете согласие на обработку своих персональных данных</div>
                 </div>
                 <div class="decor-image">
-                  <div class="decor-image__add-image-block"><img class="lazy" src="data:image/gif;base64,R0lGODlh2QH7AIAAAP///wAAACH5BAEAAAEALAAAAADZAfsAAAL+jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8btjRw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzZw7e/4MOrTo0aRLmz6NOrXq1axbu34NO7bs2bRr276NO7fu3bx7+/4NPLjw4cSLGz+OPLny5cybO38OPbr06dSrW7+OPbv27dy7e/8OPrz48eTLmz+PPr16wQUAADs=" data-src="./images/message-2.png" alt="" aria-hidden="true">
+                  <div class="decor-image__add-image-block">
+                    <picture>
+                      <source type="image/webp" srcset="#" data-srcset="./images/message-2.webp"><img class="lazy" src="data:image/gif;base64,R0lGODlh2QH7AIAAAP///wAAACH5BAEAAAEALAAAAADZAfsAAAL+jI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzs/AwdLT1NXW19jZ2tvc3d7f0NHi4+Tl5ufo6err7O3u7+Dh8vP09fb3+Pn6+/z9/v/w8woMCBBAsaPIgwocKFDBs6fAgxosSJFCtavIgxo8btjRw7evwIMqTIkSRLmjyJMqXKlSxbunwJM6bMmTRr2ryJM6fOnTx7+vwJNKjQoUSLGj2KNKnSpUybOn0KNarUqVSrWr2KNavWrVy7ev0KNqzYsWTLmj2LNq3atWzbun0LN67cuXTr2r2LN6/evXz7+v0LOLDgwYQLGz6MOLHixYwbO34MObLkyZQrW76MObPmzZw7e/4MOrTo0aRLmz6NOrXq1axbu34NO7bs2bRr276NO7fu3bx7+/4NPLjw4cSLGz+OPLny5cybO38OPbr06dSrW7+OPbv27dy7e/8OPrz48eTLmz+PPr16wQUAADs=" data-src="./images/message-2.png" alt="" aria-hidden="true">
+                    </picture>
                     <p class="decor-image__text">
                       Каждый ребенок в детстве 
                       ну просто обязан нарисовать дом, 
@@ -679,7 +766,11 @@
                       и снять мультфильм!
                     </p>
                   </div>
-                  <div class="decor-image__main-image-block"><img class="lazy" src="data:image/gif;base64,R0lGODlhpQBxAIAAAP///wAAACH5BAEAAAEALAAAAAClAHEAAAKnjI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPEycVwAAOw==" data-src="./images/lumi-2.png" alt="" aria-hidden="true"></div>
+                  <div class="decor-image__main-image-block">
+                    <picture>
+                      <source type="image/webp" srcset="#" data-srcset="./images/lumi-2.webp"><img class="lazy" src="data:image/gif;base64,R0lGODlhpQBxAIAAAP///wAAACH5BAEAAAEALAAAAAClAHEAAAKnjI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPEycVwAAOw==" data-src="./images/lumi-2.png" alt="" aria-hidden="true">
+                    </picture>
+                  </div>
                 </div>
               </div>
             </div>

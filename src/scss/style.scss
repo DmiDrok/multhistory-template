@@ -36,11 +36,11 @@ img {
   pointer-events: none;
 }
 
-.container {
-  max-width: 1050px;
-  padding: 0 20px;
-  margin: 0 auto;
-}
+// .container {
+//   max-width: 1050px;
+//   padding: 0 20px;
+//   margin: 0 auto;
+// }
 
 // === Шапка сайта ===
 // .header {
@@ -755,6 +755,15 @@ img {
     }
   }
 
+  @media (min-width: 940px) {
+    &__title {
+      text-align: start;
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 35px;
+    }
+  }
+
   @media (min-width: 1024px) {
     .action {
       &__about {
@@ -879,6 +888,11 @@ img {
 .heroes {
   margin-top: 25px;
   background: #FBF18D80;
+  position: relative;
+
+  &__bg {
+    display: none;
+  }
 
   &__row {
     padding: 30px 0;
@@ -888,7 +902,13 @@ img {
   .anim-decor {
     top: 0;
     right: 0;
-    transform: translate(-10%, -30%);
+    transform: translate(-10%, -60%);
+    height: 150px;
+
+    &__image {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   &__title {
@@ -984,7 +1004,9 @@ img {
   }
 
   @media (min-width: 660px) {
-    background: #FBF18D80 url(../images/pattern-stars.png) center / cover no-repeat;
+    &__bg {
+      display: block;
+    }
 
     .swiper-wrapper {
       column-gap: 10px;
@@ -1019,7 +1041,7 @@ img {
 
   @media (min-width: 1100px) {
     .anim-decor {
-      transform: translate(30%, -30%);
+      transform: translate(30%, -60%);
     }
 
     &__title {
@@ -1296,6 +1318,7 @@ img {
   &__bg {
     position: absolute;
     z-index: -1;
+    display: none;
 
     &_main {
       left: 0;
@@ -1333,6 +1356,12 @@ img {
     &_fly-5 {
       left: 7%;
       top: 40%;
+    }
+
+    // Ластик
+    &_fly-6 {
+      bottom: 0;
+      left: 40%;
     }
   }
 
@@ -1517,12 +1546,30 @@ img {
 
 // === Оставить заявку ===
 .enroll {
-  background: #7ACAD8 url(../images/pattern-cherries.png) center / cover no-repeat;
   margin-top: 60px;
-  // transform: translate(0, -27%); ### НЕ УДАЛЯТЬ ###
+  position: relative;
 
   &__row {
-    padding: 120px 0 40px 0;
+    padding: 40px 20px 30px 20px;
+  }
+
+  &__bg-block {
+    background-color: #7ACAD8;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 150%;
+    transform: translate(0, -15%);
+  }
+
+  &__bg {
+    z-index: 0;
+  }
+
+  &__line {
+    position: relative;
+    z-index: 10;
   }
 
   .decor-image {
@@ -1552,6 +1599,11 @@ img {
   }
 
   @media (min-width: 880px) {
+    &__bg-block {
+      transform: translate(0, 0);
+      height: 100%;
+    }
+
     &__line {
       display: flex;
       justify-content: space-between;
@@ -1584,6 +1636,8 @@ img {
 // === Подвал ===
 .footer {
   background: #000;
+  position: relative;
+  z-index: 10;
 
   .logo {
     display: none;
