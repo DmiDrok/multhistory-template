@@ -90,7 +90,7 @@ function setCorrectSliders() {
 // Ленивая загрузка
 function setCorrectLazyLoad() {
   var lazy = new LazyLoad({
-    threshold: 330
+    threshold: 450 // Значение по умолчанию: 300
   });
 }
 
