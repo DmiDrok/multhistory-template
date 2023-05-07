@@ -206,17 +206,11 @@ function setCorrectIntlInputs() {
 
 // Всплывающие окна с видео
 function setCorrectVideoPopups() {
-  for (let i = 1; i < 6; i++) {
-    const videoKey = `video-${i}`;
-
-    fsLightboxInstances[videoKey].props.onOpen = function() {
-      const video = fsLightboxInstances[videoKey].elements.container.querySelector('video');
-      video.volume = 0.5;
-      video.play();
-    }
-  }
+  $('.video-iframe-link').magnificPopup({
+    type:'iframe',
+  });
 }
 
-// console.log = {};
-// console.error = {};
-// console.warn = {};
+console.log = {};
+console.error = {};
+console.warn = {};

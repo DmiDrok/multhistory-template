@@ -2772,6 +2772,7 @@ img.mfp-img {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow-y: auto;
 }
 
 @media (min-width: 510px) {
@@ -2887,7 +2888,6 @@ img.mfp-img {
 .video-iframe-link {
   position: relative;
   z-index: 100;
-  cursor: pointer;
 }
 .video-iframe-link__bg {
   position: absolute;

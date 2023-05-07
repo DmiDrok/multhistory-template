@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     console.error(err);
   }
 });
-window.addEventListener('resize', function () {
+window.addEventListener('orientationchange', function () {
   location.reload();
 });
 
@@ -196,17 +196,9 @@ function setCorrectIntlInputs() {
 
 // Всплывающие окна с видео
 function setCorrectVideoPopups() {
-  var _loop = function _loop() {
-    var videoKey = "video-".concat(i);
-    fsLightboxInstances[videoKey].props.onOpen = function () {
-      var video = fsLightboxInstances[videoKey].elements.container.querySelector('video');
-      video.volume = 0.5;
-      video.play();
-    };
-  };
-  for (var i = 1; i < 6; i++) {
-    _loop();
-  }
+  $('.video-iframe-link').magnificPopup({
+    type: 'iframe'
+  });
 }
 console.log = {};
 console.error = {};
