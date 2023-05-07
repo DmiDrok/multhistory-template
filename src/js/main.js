@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-window.addEventListener('resize', () => {
+window.addEventListener('orientationchange', () => {
   location.reload();
 });
 
@@ -217,6 +217,6 @@ function setCorrectVideoPopups() {
   }
 }
 
-console.log = {};
-console.error = {};
-console.warn = {};
+// console.log = {};
+// console.error = {};
+// console.warn = {};
