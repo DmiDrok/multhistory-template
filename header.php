@@ -374,13 +374,13 @@
   <div class="popup popup-form">
     <div class="popup__row">
       <div class="popup__wrapper popup-form__wrapper">
-        <div class="form-block enroll__form-block"><span class="form-block__title"><b>Запишитесь</b> на ближайший мастер-класс <b>прямо сейчас</b></span>
+        <div class="form-block enroll__form-block"><span class="form-block__title"><?php the_field('form-block-title'); ?></span>
           <form class="request-form" action="#" method="POST">
             <input class="request-form__input" type="text" name="name" placeholder="Имя" required>
             <input class="request-form__input" type="tel" name="tel" placeholder="Телефон" required>
-            <button class="trigger red-action-btn request-form__submit" type="submit" data-popup-selector=".popup-accept">Отправить</button>
+            <button class="trigger red-action-btn request-form__submit" type="submit" data-popup-selector=".popup-accept"><?php the_field('form-block-button-text'); ?></button>
           </form>
-          <div class="form-block__note">Нажимая на кнопку “Отправить”, <br>вы даете согласие на обработку своих персональных данных</div>
+          <div class="form-block__note">Нажимая на кнопку “<?php the_field('form-block-button-text'); ?>”, <br>вы даете согласие на обработку своих персональных данных</div>
         </div>
       </div>
     </div>
@@ -389,7 +389,10 @@
     <div class="popup__row">
       <div class="popup__wrapper popup-accept__wrapper">
         <div class="popup-accept__logo"><img src="<?php echo $custom_logo_url; ?>" alt="Логотип"></div>
-        <div class="popup-accept__text-content"><span class="popup-accept__title">Спасибо, <br> ваша заявка принята!</span><span class="popup-accept__description">В ближайшее время мы с вами свяжемся.</span></div>
+        <div class="popup-accept__text-content">
+          <span class="popup-accept__title"><?php the_field('accept-title'); ?></span>
+          <span class="popup-accept__description"><?php the_field('accept-subtitle'); ?></span>
+        </div>
       </div>
     </div>
   </div>
