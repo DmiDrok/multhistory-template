@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Мультистория мастерская мультфильмов - снимайте детские мультфильмы вместе с нами">
+  <meta name="keywords" content="мультфильмы, дети, мастерская, камера, ребята, родители, просмотр">
   <title><?php bloginfo('name'); ?> | <?php bloginfo('description'); ?></title>
   <style>
     .container {
@@ -360,9 +362,6 @@
   <link rel="icon" href="<?php bloginfo('template_url') ?>/assets/images/favicon.ico">
   
   <?php wp_head(); ?>
-
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
-  <script src="gaso/gsap-public/minified/ScrollTrigger.min.js"></script> -->
 </head>
 
 <body>
@@ -376,6 +375,7 @@
       <div class="popup__wrapper popup-form__wrapper">
         <div class="form-block enroll__form-block"><span class="form-block__title"><?php the_field('form-block-title'); ?></span>
           <form class="request-form" action="#" method="POST">
+            <input type="hidden" name="action" value="feedback">
             <input class="request-form__input" type="text" name="name" placeholder="Имя" required>
             <input class="request-form__input" type="tel" name="tel" placeholder="Телефон" required>
             <button class="trigger red-action-btn request-form__submit" type="submit" data-popup-selector=".popup-accept"><?php the_field('form-block-button-text'); ?></button>

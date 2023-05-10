@@ -391,30 +391,30 @@
       <div class="videos__row">
         <h2 class="videos__title"><?php the_field('videos-title'); ?></h2>
         <div class="videos__content">
-          <a class="video-iframe-link" href="<?php the_field('videos-video-1'); ?>">
+          <a class="video-iframe-link" data-fslightbox="video-1" href="<?php the_field('videos-video-1'); ?>">
             <picture>
               <source type="image/webp" srcset="#" data-srcset="<?php bloginfo('template_url') ?>/assets/images/pattern-video.webp"><img class="lazy video-iframe-link__bg" src="#" alt="" data-src="<?php bloginfo('template_url') ?>/assets/images/pattern-video.jpg" aria-hidden="true">
             </picture>
             <div class="video-iframe-link__play-icon"></div>
-          </a><a class="video-iframe-link" href="<?php the_field('videos-video-2'); ?>">
-            <picture>
-              <source type="image/webp" srcset="#" data-srcset="<?php bloginfo('template_url') ?>/assets/images/pattern-video.webp"><img class="lazy video-iframe-link__bg" src="#" alt="" data-src="<?php bloginfo('template_url') ?>/assets/images/pattern-video.jpg" aria-hidden="true">
-            </picture>
-            <div class="video-iframe-link__play-icon"></div>
-          </a>
-          <a class="video-iframe-link" href="<?php the_field('videos-video-3'); ?>">
+          </a><a class="video-iframe-link" data-fslightbox="video-2" href="<?php the_field('videos-video-2'); ?>">
             <picture>
               <source type="image/webp" srcset="#" data-srcset="<?php bloginfo('template_url') ?>/assets/images/pattern-video.webp"><img class="lazy video-iframe-link__bg" src="#" alt="" data-src="<?php bloginfo('template_url') ?>/assets/images/pattern-video.jpg" aria-hidden="true">
             </picture>
             <div class="video-iframe-link__play-icon"></div>
           </a>
-          <a class="video-iframe-link" href="<?php the_field('videos-video-4'); ?>">
+          <a class="video-iframe-link" data-fslightbox="video-3" href="<?php the_field('videos-video-3'); ?>">
             <picture>
               <source type="image/webp" srcset="#" data-srcset="<?php bloginfo('template_url') ?>/assets/images/pattern-video.webp"><img class="lazy video-iframe-link__bg" src="#" alt="" data-src="<?php bloginfo('template_url') ?>/assets/images/pattern-video.jpg" aria-hidden="true">
             </picture>
             <div class="video-iframe-link__play-icon"></div>
           </a>
-          <a class="video-iframe-link" href="<?php the_field('videos-video-5'); ?>">
+          <a class="video-iframe-link" data-fslightbox="video-4" href="<?php the_field('videos-video-4'); ?>">
+            <picture>
+              <source type="image/webp" srcset="#" data-srcset="<?php bloginfo('template_url') ?>/assets/images/pattern-video.webp"><img class="lazy video-iframe-link__bg" src="#" alt="" data-src="<?php bloginfo('template_url') ?>/assets/images/pattern-video.jpg" aria-hidden="true">
+            </picture>
+            <div class="video-iframe-link__play-icon"></div>
+          </a>
+          <a class="video-iframe-link" data-fslightbox="video-5" href="<?php the_field('videos-video-5'); ?>">
             <picture>
               <source type="image/webp" srcset="#" data-srcset="<?php bloginfo('template_url') ?>/assets/images/pattern-video.webp"><img class="lazy video-iframe-link__bg" src="#" alt="" data-src="<?php bloginfo('template_url') ?>/assets/images/pattern-video.jpg" aria-hidden="true">
             </picture>
@@ -552,9 +552,11 @@
         <div class="enroll__line">
           <div class="form-block enroll__form-block">
             <h2 class="form-block__title"><?php the_field('form-block-title'); ?></h2>
-            <form class="request-form" id="req-form" action="#" method="POST">
-              <?php echo do_shortcode('[contact-form-7 id="314" title="Контактная форма"]'); ?>
-              <!-- <button class="trigger red-action-btn request-form__submit" type="submit" data-popup-selector=".popup-accept"><?php the_field('form-block-button-text'); ?></button> -->
+            <form class="request-form" id="req-form" action="<?php echo esc_url(admin_url('admin.php')); ?>" method="POST">
+              <input type="hidden" name="action" value="feedback">
+              <input class="request-form__input" type="text" name="name" placeholder="Имя" required>
+              <input class="request-form__input" type="tel" name="tel" placeholder="Телефон" required>
+              <button class="trigger red-action-btn request-form__submit" type="submit" data-popup-selector=".popup-accept"><?php the_field('form-block-button-text'); ?></button>
             </form>
             <div class="form-block__note">Нажимая на кнопку “<?php the_field('form-block-button-text'); ?>”, <br>вы даете согласие на обработку своих персональных данных</div>
           </div>

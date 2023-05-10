@@ -11,6 +11,7 @@ function add_scripts() {
     wp_deregister_script('jquery');
   }
 
+  // wp_enqueue_script('fslightbox', get_theme_file_uri('/assets/js/fslightbox.js'), array(), null, true);
   wp_enqueue_script('main', get_theme_file_uri('/assets/js/main.min.js'), array(), null, true);
 }
 
@@ -72,3 +73,19 @@ function imp_wpcf7_form_elements( $content ) {
 	}
 	return $content;
 }
+
+function my_post_handler() {
+	if (!empty($_POST)) {
+		$name = $_POST['name'];
+		$tel = $_POST['tel'];
+		wp_mail('dmidrok@gmail.com', 'Site request', "Name: $name, Tel: $tel");
+	}
+
+	error_log(json_encode($_POST));
+}
+
+// add_action('admin_post_feedback', 'my_post_handler');
+// add_action('admin_post_nopriv_feedback', 'my_post_handler');
+// add_action('admin_action_feedback', 'my_post_handler');
+add_action('init', 'my_post_handler');
+
